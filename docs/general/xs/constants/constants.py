@@ -80,35 +80,41 @@ def replace_placeholders(string, is_res, constant):
 def main():
     global outmd
 
+    outmd_old = outmd[:]
     for index, (category, constants) in enumerate(const_docs.items(), 1):
         filename = category.replace(" ", "_").replace("/", "_").lower().replace("effectamount", "effect_amount")
         catmd = outmd[:]
-        # catmd += f"## {index}. {category.title().replace('Effectamount', 'EffectAmount')}\n\n"
+        outmd_old += f"## {index}. {category.title().replace('Effectamount', 'EffectAmount')}\n\n"
 
         for c_index, constant in enumerate(constants, 1):
             catmd += f"## {c_index}. {constant['name']}\n\n"
-            catmd += f"Value: `#!xs {constant['type']} {constant['value']}`\n\n"
-            catmd += f"{replace_placeholders(constant['desc'], category == 'resource', constant)}\n\n"
+            outmd_old += f"### {index}.{c_index}. {constant['name']}\n\n"
+
+            body = f"Value: `#!xs {constant['type']} {constant['value']}`\n\n"
+            body += f"{replace_placeholders(constant['desc'], category == 'resource', constant)}\n\n"
             if constant['usage']:
                 if category != "task attribute":
-                    # catmd += f"Syntax: `#!xs {constant['usage']['syntax']}`\n\n"
-                    # catmd += f"Example: `#!xs {constant['usage']['example']}`\n\n"
-                    catmd += f"Syntax:\n\n```xs\n {constant['usage']['syntax']}\n```\n\n"
-                    catmd += f"Example:\n\n```xs\n {constant['usage']['example']}\n```\n\n"
-                    catmd += f"{constant['usage']['explanation']}\n\n"
+                    # body += f"Syntax: `#!xs {constant['usage']['syntax']}`\n\n"
+                    # body += f"Example: `#!xs {constant['usage']['example']}`\n\n"
+                    body += f"Syntax:\n\n```xs\n {constant['usage']['syntax']}\n```\n\n"
+                    body += f"Example:\n\n```xs\n {constant['usage']['example']}\n```\n\n"
+                    body += f"{constant['usage']['explanation']}\n\n"
                 else:
-                    catmd += f"Usages per task type:\n\n"
+                    body += f"Usages per task type:\n\n"
                     for task, usage in constant["usage"].items():
-                        catmd += f"  - {task}: {usage['desc']}\n"
+                        body += f"  - {task}: {usage['desc']}\n"
                         if usage["list"]:
-                            catmd += f'    - {"\n    - ".join(usage["list"])}\n'
-                        catmd += "\n"
+                            body += f'    - {"\n    - ".join(usage["list"])}\n'
+                        body += "\n"
+
+            catmd += body
+            outmd_old += body
 
         with open(f"./{filename}.md", "w") as file:
             file.write(catmd)
 
-    # with open("./constants.md", "w") as file:
-    #     file.write(outmd)
+    with open("./constants.md", "w") as file:
+        file.write(outmd_old)
 
     # convert("functions")
     # convert("constants")
