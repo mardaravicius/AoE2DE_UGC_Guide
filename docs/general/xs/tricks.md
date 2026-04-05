@@ -120,7 +120,6 @@ bool xsAddAura(
     xsTaskAmount(cTaskAttrSearchWaitTime, 0.0 + attribute);
     xsTaskAmount(cTaskAttrCombatLevelFlag, 0.0 + auraEffectsBitField);
     xsTaskAmount(cTaskAttrOwnerType, 0.0 + targetDiplomacy);
-
     if (affectedUnit >= 900 && affectedUnit < 1000) {
         xsTaskAmount(cTaskAttrObjectClass, 0.0 + affectedUnit);
     } else {
