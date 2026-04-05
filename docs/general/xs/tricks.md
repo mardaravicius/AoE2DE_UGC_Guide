@@ -113,15 +113,20 @@ bool xsAddAura(
 
     /* Setting aura task */
     xsResetTaskAmount();
+    xsTaskAmount(cTaskAttrTaskType, 0.0 + cTaskTypeAura);
     xsTaskAmount(cTaskAttrWorkValue1, value);
     xsTaskAmount(cTaskAttrWorkValue2, 0.0 + unitsInRangeToTurnOn);
     xsTaskAmount(cTaskAttrWorkRange, range);
     xsTaskAmount(cTaskAttrSearchWaitTime, 0.0 + attribute);
     xsTaskAmount(cTaskAttrCombatLevelFlag, 0.0 + auraEffectsBitField);
     xsTaskAmount(cTaskAttrOwnerType, 0.0 + targetDiplomacy);
-    xsTask(auraUnit, 155, affectedUnit, player);
 
-    return (true);
+    if (affectedUnit >= 900 && affectedUnit < 1000) {
+        xsTaskAmount(cTaskAttrObjectClass, 0.0 + affectedUnit);
+    } else {
+        xsTaskAmount(cTaskAttrObjectId, 0.0 + affectedUnit);
+    }
+    return (xsModifyObjectTasks(auraUnit, player));
 }
 
 bool xsRemoveAura(
