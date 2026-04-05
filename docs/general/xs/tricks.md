@@ -128,64 +128,6 @@ bool xsAddAura(
     return (xsModifyObjectTasks(auraUnit, player));
 }
 
-bool xsRemoveAura(
-    int auraUnit = -1, /* unit from which remove the aura */
-    int affectedUnit = -1, /* unit or unit class (9xx) to be affected by the aura */
-    int player = -1, /* aura unit player, does not work with -1, make multiple calls to all players instead */
-    int attribute = -1, /* aura attribute, not all attributes supported by auras */
-    bool removeTempAuraAttributes = false, /* if set removes temp aura attributes from unit */
-    bool removeAllAuraAbilities = false /* if set removes unit aura ability disabling all auras and removing indicators */
-) { 
-    /* Function removes the aura added by xsAddAura. Leaves combat ability unchanged. 
-    Removing auras "freezes" the unit for further non task modifications.
-    Function returns `true` if function parameter validation passed and `false` if it did not (no aura removed). */
-    
-    /* Validation */
-    if (auraUnit < 0 || affectedUnit < 0 || player < 0 || player > 8) {
-        return (false);
-    }
-
-    /* Handling gaia player */
-    int setCommand = cSetAttribute;
-    if (player == 0) {
-        setCommand = cGaiaSetAttribute;
-    }
-
-    /* Remove temporary aura values */
-    if (removeTempAuraAttributes) {
-        float ct = xsGetObjectAttribute(player, auraUnit, cChargeType);
-        if (ct == -3) {
-            xsEffectAmount(setCommand, auraUnit, cMaxCharge, 0.0, player);
-            xsEffectAmount(setCommand, auraUnit, cRechargeRate, 0.0, player);
-            xsEffectAmount(setCommand, auraUnit, cChargeEvent, 0.0, player);
-            xsEffectAmount(setCommand, auraUnit, cChargeType, 0.0, player);
-        }
-    }
-
-    /* Remove combat ability */
-    if (removeAllAuraAbilities) {
-        float ca = xsGetObjectAttribute(player, auraUnit, cCombatAbility);
-        float caMod = 0;
-        float auraBit = (ca / 32) % 2;
-        if (auraBit == 1) {
-            caMod = -32;
-        }
-        float selfBit = (ca / 64) % 2;
-        if (selfBit == 1) {
-            caMod = caMod - 64;
-        }
-        if (caMod != 0) {
-            xsEffectAmount(setCommand, auraUnit, cCombatAbility, ca + caMod, player);
-        }
-    }
-
-    /* Setting aura task */
-    xsTaskAmount(cTaskAttrSearchWaitTime, 0.0 + attribute);
-    xsRemoveTask(auraUnit, 155, affectedUnit, player);
-
-    return (true);
-}
-
 extern const int cAuraEffectBitMultiply = 1; /* if not added, value is added instead */
 extern const int cAuraEffectBitCircular = 2; /* if not added, aura is square shaped */
 extern const int cAuraEffectBitRangeIndicator = 4;
