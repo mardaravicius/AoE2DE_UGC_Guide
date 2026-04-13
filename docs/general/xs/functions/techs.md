@@ -42,5 +42,5 @@ Parameters:
 1.  `#!xs int techId`: The tech to get the state for
 2.  `#!xs int playerId`: The player to get the tech's state for
 
-Returns one of the [cTechState constants](../../constants/tech_state "Jump To: XS > Constant Reference > Tech State Constants") based on the tech's status
+Returns one of the [cTechState constants](../../constants/constants/#17-tech-state "Jump To: XS > Constant Reference > 17. Tech State Constants") based on the tech's status
 

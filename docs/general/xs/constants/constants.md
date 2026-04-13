@@ -8,25 +8,25 @@
 
 Value: `#!xs int 0`
 
-Used with the [xsOffsetFilePosition](../../functions/file_io/#12-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store a string (4 bytes + a number of bytes that is determined by the integer that the first 4 bytes represent)
+Used with the [xsOffsetFilePosition](../../functions/functions/#1312-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store a string (4 bytes + a number of bytes that is determined by the integer that the first 4 bytes represent)
 
 ### 1.2. cOffsetInteger
 
 Value: `#!xs int 1`
 
-Used with the [xsOffsetFilePosition](../../functions/file_io/#12-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store an integer (4 bytes)
+Used with the [xsOffsetFilePosition](../../functions/functions/#1312-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store an integer (4 bytes)
 
 ### 1.3. cOffsetFloat
 
 Value: `#!xs int 2`
 
-Used with the [xsOffsetFilePosition](../../functions/file_io/#12-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store a float (4 bytes)
+Used with the [xsOffsetFilePosition](../../functions/functions/#1312-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store a float (4 bytes)
 
 ### 1.4. cOffsetVector
 
 Value: `#!xs int 3`
 
-Used with the [xsOffsetFilePosition](../../functions/file_io/#12-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store a vector (12 bytes)
+Used with the [xsOffsetFilePosition](../../functions/functions/#1312-xsoffsetfileposition "Jump To: XS > Function Reference > xsOffsetFilePosition"). Makes the offset function move the file position by the number of bytes it takes to store a vector (12 bytes)
 
 ## 2. Age
 
@@ -604,13 +604,13 @@ Value: `#!xs int 18`
 
 The number of civilizations for RoR
 
-## 8. EffectAmount Effect Type
+## 8. Effect Amount Effect Type
 
 ### 8.1. cSetAttribute
 
 Value: `#!xs int 0`
 
-This is the ID of the `Set Attribute` effect of the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Set Attribute` effect of the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -624,13 +624,13 @@ Example:
  xsEffectAmount(cSetAttribute, 74, cHitpoints, 100)
 ```
 
-This sets the HP of unit 74 (militia) to 100 (the value). Alternatively, any of the [Unit Attribute Constants](../object_attribute "Jump to: XS > Constant Reference > Object Attribute") may be used to modify the corresponding unit property
+This sets the HP of unit 74 (militia) to 100 (the value). Alternatively, any of the [Unit Attribute Constants](./#11-object-attribute "Jump to: XS > Constant Reference > 11. Object Attribute") may be used to modify the corresponding unit property
 
 ### 8.2. cModResource
 
 Value: `#!xs int 1`
 
-This is the ID of the `Modify Resource` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Modify Resource` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -650,7 +650,7 @@ This adds 100 to the current food amount. Alternatively, `cAttributeSet` may be 
 
 Value: `#!xs int 2`
 
-This is the ID of the `Enable (or disable) Object` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Enable (or disable) Object` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -670,7 +670,7 @@ This disables the unit 74 (militia). Alternatively, `cAttributeEnable` may be us
 
 Value: `#!xs int 3`
 
-This is the ID of the `Upgrade Unit` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Upgrade Unit` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -690,7 +690,7 @@ This copies all units attributes except ID and available from unit 75 (man at ar
 
 Value: `#!xs int 4`
 
-This is the ID of the `Add Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Add Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -710,7 +710,7 @@ This adds 100 (the value) to the attribute 0 (HP) of unit 74 (militia)
 
 Value: `#!xs int 5`
 
-This is the ID of the `Multiply Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Multiply Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -730,7 +730,7 @@ This multiplies the attribute 0 (HP) of unit 74 (militia) by 100 (the value)
 
 Value: `#!xs int 6`
 
-This is the ID of the `Multiply Resource` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Multiply Resource` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -750,7 +750,7 @@ This multiplies the food amount by 10 (the value)
 
 Value: `#!xs int 7`
 
-This is the ID of the `Spawn Unit` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Spawn Unit` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -772,7 +772,7 @@ This will spawn 5 villagers (83) from each town centre (109), for a maximum of 2
 
 Value: `#!xs int 8`
 
-This is the ID of the `Modify Technology` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Modify Technology` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -786,13 +786,13 @@ Example:
  xsEffectAmount(cModifyTech, 22, cAttrSetTime, 10)
 ```
 
-This sets the research time of tech 22 (loom) to 10s (the value). Alternatively, any of the [Tech Attribute Constants](../effect_amount_technology_attribute "Jump to: XS > Constant Reference > Effect Amount Tech Attribute") may be used to modify the corresponding tech property
+This sets the research time of tech 22 (loom) to 10s (the value). Alternatively, any of the [Tech Attribute Constants](./#10-effect-amount-technology-attribute "Jump to: XS > Constant Reference > 10. Effect Amount Tech Attribute") may be used to modify the corresponding tech property
 
 ### 8.10. cSetPlayerData
 
 Value: `#!xs int 9`
 
-This is the ID of the `Set Player Data` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Set Player Data` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -812,7 +812,7 @@ This sets the player data 0 (Civilization Name ID) to 10230 (the value)
 
 Value: `#!xs int 10`
 
-This is the ID of the `Set Unit Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Set Unit Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -832,7 +832,7 @@ This sets unit 0's HP to 40. This is the same as modify object attribute in the 
 
 Value: `#!xs int 11`
 
-This is the ID of the `Add Unit Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Add Unit Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -852,7 +852,7 @@ This adds 40 to unit 0's HP. This is the same as modify object attribute in the 
 
 Value: `#!xs int 12`
 
-This is the ID of the `Multiply Unit Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Multiply Unit Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -872,7 +872,7 @@ This multiplies unit 0's HP by 40. This is the same as modify object attribute i
 
 Value: `#!xs int 100`
 
-This is the ID of the `Set Technology Cost` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
+This is the ID of the `Set Technology Cost` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
 
 Syntax:
 
@@ -892,7 +892,7 @@ This sets the food cost of tech 22 (loom) to 10 (the value)
 
 Value: `#!xs int 101`
 
-This is the ID of the `Add Technology Cost` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
+This is the ID of the `Add Technology Cost` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
 
 Syntax:
 
@@ -912,7 +912,7 @@ This adds 10 (the) to the current food cost of tech 22 (loom)
 
 Value: `#!xs int 102`
 
-This is the ID of the `Disable Tech` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Disable Tech` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -932,7 +932,7 @@ This disables the tech 22 (loom)
 
 Value: `#!xs int 103`
 
-This is the ID of the `Modify Technology Time` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
+This is the ID of the `Modify Technology Time` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
 
 Syntax:
 
@@ -952,7 +952,7 @@ This sets the research time of tech 22 (loom) to 10s (the value). Alternatively,
 
 Value: `#!xs int -1`
 
-This is the ID of the `Gaia Set Attribute` effect of the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Set Attribute` effect of the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -972,7 +972,7 @@ This sets the attribute 0 (HP) of unit 74 (militia) to 100 (the value)
 
 Value: `#!xs int -2`
 
-This is the ID of the `Gaia Modify Resource` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Modify Resource` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -992,7 +992,7 @@ This adds 100 to the current food amount. Alternatively, `cAttributeSet` may be 
 
 Value: `#!xs int -3`
 
-This is the ID of the `Gaia Enable (or disable) Object` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Enable (or disable) Object` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1012,7 +1012,7 @@ This disables the unit 74 (militia). Alternatively, `cAttributeEnable` may be us
 
 Value: `#!xs int -4`
 
-This is the ID of the `Gaia Upgrade Unit` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Upgrade Unit` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1032,7 +1032,7 @@ This replaces all units 74 (militia) with 75 (man at arms) on the map and also d
 
 Value: `#!xs int -5`
 
-This is the ID of the `Gaia Add Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Add Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1052,7 +1052,7 @@ This adds 100 (the value) to the attribute 0 (HP) of unit 74 (militia)
 
 Value: `#!xs int -6`
 
-This is the ID of the `Gaia Multiply Attribute` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Multiply Attribute` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1072,7 +1072,7 @@ This multiplies the attribute 0 (HP) of unit 74 (militia) by 100 (the value)
 
 Value: `#!xs int -7`
 
-This is the ID of the `Gaia Multiply Resource` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Multiply Resource` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1092,7 +1092,7 @@ This multiplies the food amount by 10 (the value)
 
 Value: `#!xs int -8`
 
-This is the ID of the `Gaia Spawn Unit` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Spawn Unit` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1114,7 +1114,7 @@ This will spawn 5 villagers (83) from each town centre (109), for a maximum of 2
 
 Value: `#!xs int -9`
 
-This is the ID of the `Gaia Modify Technology` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Modify Technology` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1128,13 +1128,13 @@ Example:
  xsEffectAmount(cGaiaModifyTech, 22, cAttrSetTime, 10)
 ```
 
-This sets the research time of tech 22 (loom) to 10s (the value). Alternatively, any of the [Tech Attribute Constants](../effect_amount_technology_attribute "Jump to: XS > Constant Reference > Effect Amount Tech Attribute") may be used to modify the corresponding tech property
+This sets the research time of tech 22 (loom) to 10s (the value). Alternatively, any of the [Tech Attribute Constants](./#10-effect-amount-technology-attribute "Jump to: XS > Constant Reference > 10. Effect Amount Tech Attribute") may be used to modify the corresponding tech property
 
 ### 8.27. cGaiaSetPlayerData
 
 Value: `#!xs int -10`
 
-This is the ID of the `Gaia Set Player Data` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Set Player Data` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1154,7 +1154,7 @@ This sets the player data 0 (Civilization Name ID) to 10230 (the value)
 
 Value: `#!xs int -101`
 
-This is the ID of the `Gaia Set Technology Cost` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
+This is the ID of the `Gaia Set Technology Cost` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
 
 Syntax:
 
@@ -1174,7 +1174,7 @@ This sets the food cost of tech 22 (loom) to 10 (the value)
 
 Value: `#!xs int -102`
 
-This is the ID of the `Gaia Add Technology Cost` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
+This is the ID of the `Gaia Add Technology Cost` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
 
 Syntax:
 
@@ -1194,7 +1194,7 @@ This adds 10 (the) to the current food cost of tech 22 (loom)
 
 Value: `#!xs int -103`
 
-This is the ID of the `Gaia Disable Tech` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Gaia Disable Tech` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 Syntax:
 
@@ -1214,7 +1214,7 @@ This disables the tech 22 (loom)
 
 Value: `#!xs int -104`
 
-This is the ID of the `Gaia Modify Technology Time` effect for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
+This is the ID of the `Gaia Modify Technology Time` effect for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function. No Longer works, use `cModifyTech` instead
 
 Syntax:
 
@@ -1230,201 +1230,201 @@ Example:
 
 This sets the research time of tech 22 (loom) to 10s (the value). Alternatively, `cAttributeAdd` may be used to add to the current research time of the technology
 
-## 9. EffectAmount Effect Operations
+## 9. Effect Amount Effect Operations
 
 ### 9.1. cAttributeDisable
 
 Value: `#!xs int 0`
 
-This is the ID of the `Attribute Disbale` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Disbale` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 9.2. cAttributeEnable
 
 Value: `#!xs int 1`
 
-This is the ID of the `Attribute Enable` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Enable` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 9.3. cAttributeForce
 
 Value: `#!xs int 2`
 
-This is the ID of the `Attribute Force` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Force` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 9.4. cAttributeResearch
 
 Value: `#!xs int 2`
 
-This is the ID of the `Attribute Research` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Research` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 9.5. cAttributeSet
 
 Value: `#!xs int 0`
 
-This is the ID of the `Attribute Set` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 9.6. cAttributeAdd
 
 Value: `#!xs int 1`
 
-This is the ID of the `Attribute Add` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Add` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
-## 10. EffectAmount Technology Attribute
+## 10. Effect Amount Technology Attribute
 
 ### 10.1. cAttrSetTime
 
 Value: `#!xs int -1`
 
-This is the ID of the `Attribute Set Time` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Time` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.2. cAttrAddTime
 
 Value: `#!xs int -2`
 
-This is the ID of the `Attribute Add Time` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Add Time` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.3. cAttrMulTime
 
 Value: `#!xs int -3`
 
-This is the ID of the `Attribute Multiply Time` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Multiply Time` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.4. cAttrSetFoodCost
 
 Value: `#!xs int 0`
 
-This is the ID of the `Attribute Set Food Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Food Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.5. cAttrSetWoodCost
 
 Value: `#!xs int 1`
 
-This is the ID of the `Attribute Set Wood Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Wood Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.6. cAttrSetStoneCost
 
 Value: `#!xs int 2`
 
-This is the ID of the `Attribute Set Stone Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Stone Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.7. cAttrSetGoldCost
 
 Value: `#!xs int 3`
 
-This is the ID of the `Attribute Set Gold Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Gold Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.8. cAttrAddFoodCost
 
 Value: `#!xs int 16384`
 
-This is the ID of the `Attribute Add Food Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Add Food Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.9. cAttrAddWoodCost
 
 Value: `#!xs int 16385`
 
-This is the ID of the `Attribute Add Wood Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Add Wood Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.10. cAttrAddStoneCost
 
 Value: `#!xs int 16386`
 
-This is the ID of the `Attribute Add Stone Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Add Stone Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.11. cAttrAddGoldCost
 
 Value: `#!xs int 16387`
 
-This is the ID of the `Attribute Add Gold Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Add Gold Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.12. cAttrMulFoodCost
 
 Value: `#!xs int 13`
 
-This is the ID of the `Attribute Multiply Food Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Multiply Food Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.13. cAttrMulWoodCost
 
 Value: `#!xs int 14`
 
-This is the ID of the `Attribute Multiply Wood Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Multiply Wood Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.14. cAttrMulStoneCost
 
 Value: `#!xs int 15`
 
-This is the ID of the `Attribute Multiply Stone Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Multiply Stone Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.15. cAttrMulGoldCost
 
 Value: `#!xs int 16`
 
-This is the ID of the `Attribute Multiply Gold Cost` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Multiply Gold Cost` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.16. cAttrMulAllCosts
 
 Value: `#!xs int 17`
 
-This is the ID of the `Attribute Multiply All Costs` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Multiply All Costs` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.17. cAttrSetEffect
 
 Value: `#!xs int 18`
 
-This is the ID of the `Attribute Set Effect` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Effect` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.18. cAttrSetLocation
 
 Value: `#!xs int 4`
 
-This is the ID of the `Attribute Set Tech Location` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Tech Location` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.19. cAttrSetButton
 
 Value: `#!xs int 5`
 
-This is the ID of the `Attribute Set Tech Button` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Tech Button` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.20. cAttrSetIcon
 
 Value: `#!xs int 6`
 
-This is the ID of the `Attribute Set Tech Icon` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Tech Icon` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.21. cAttrSetName
 
 Value: `#!xs int 7`
 
-This is the ID of the `Attribute Set Tech Name` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Tech Name` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.22. cAttrSetDescription
 
 Value: `#!xs int 8`
 
-This is the ID of the `Attribute Set Tech Description` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Tech Description` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.23. cAttrSetStacking
 
 Value: `#!xs int 9`
 
-This is the ID of the `Attribute Set Tech Stacking` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Tech Stacking` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.24. cAttrSetStackingResearchCap
 
 Value: `#!xs int 10`
 
-This is the ID of the `Attribute Set Stacking Research Cap` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Stacking Research Cap` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.25. cAttrSetHotkey
 
 Value: `#!xs int 11`
 
-This is the ID of the `Attribute Set Hotkey` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set Hotkey` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ### 10.26. cAttrSetState
 
 Value: `#!xs int 12`
 
-This is the ID of the `Attribute Set State` modifier for the [xsEffectAmount](../../functions/player/#1-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
+This is the ID of the `Attribute Set State` modifier for the [xsEffectAmount](../../functions/functions/#71-xseffectamount "Jump To: XS > Functions > xsEffectAmount") function
 
 ## 11. Object Attribute
 
@@ -1936,7 +1936,7 @@ This is the attribute [Selection Sound](../../../attributes/attributes/#92-selec
 
 Value: `#!xs int 93`
 
-This is the attribute [Selection Sound Event](../../../attributes/attributes/#93-selection-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Selection Sound Event](../../../attributes/attributes/#93-selection-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ### 11.86. cDyingSound
 
@@ -1948,7 +1948,7 @@ This is the attribute [Dying Sound](../../../attributes/attributes/#94-dying-sou
 
 Value: `#!xs int 95`
 
-This is the attribute [Dying Sound Event](../../../attributes/attributes/#95-dying-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Dying Sound Event](../../../attributes/attributes/#95-dying-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ### 11.88. cTrainSound
 
@@ -1960,7 +1960,7 @@ This is the attribute [Train Sound](../../../attributes/attributes/#96-train-sou
 
 Value: `#!xs int 97`
 
-This is the attribute [Train Sound Event](../../../attributes/attributes/#97-train-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Train Sound Event](../../../attributes/attributes/#97-train-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ### 11.90. cDamageSound
 
@@ -1972,7 +1972,7 @@ This is the attribute [Damage Sound](../../../attributes/attributes/#98-damage-s
 
 Value: `#!xs int 99`
 
-This is the attribute [Damage Sound Event](../../../attributes/attributes/#99-damage-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Damage Sound Event](../../../attributes/attributes/#99-damage-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ### 11.92. cResourceCost
 
@@ -2164,7 +2164,7 @@ This is the attribute [Command Sound](../../../attributes/attributes/#132-comman
 
 Value: `#!xs int 133`
 
-This is the attribute [Command Sound Event](../../../attributes/attributes/#133-command-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Command Sound Event](../../../attributes/attributes/#133-command-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ### 11.124. cMoveSound
 
@@ -2176,7 +2176,7 @@ This is the attribute [Move Sound](../../../attributes/attributes/#134-move-soun
 
 Value: `#!xs int 135`
 
-This is the attribute [Move Sound Event](../../../attributes/attributes/#135-move-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Move Sound Event](../../../attributes/attributes/#135-move-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ### 11.126. cConstructionSound
 
@@ -2188,7 +2188,7 @@ This is the attribute [Construction Sound](../../../attributes/attributes/#136-c
 
 Value: `#!xs int 137`
 
-This is the attribute [Construction Sound Event](../../../attributes/attributes/#137-construction-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Construction Sound Event](../../../attributes/attributes/#137-construction-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ### 11.128. cTransformSound
 
@@ -2200,7 +2200,7 @@ This is the attribute [Transform Sound](../../../attributes/attributes/#138-tran
 
 Value: `#!xs int 139`
 
-This is the attribute [Transform Sound Event](../../../attributes/attributes/#139-transform-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Transform Sound Event](../../../attributes/attributes/#139-transform-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ### 11.130. cRunPattern
 
@@ -4654,7 +4654,7 @@ ID for the task amount Task Attribute Work Value1.
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): Quantity to mul/add to the attribute modified
+  - [Aura Task](./#1642-ctasktypeaura): Quantity to mul/add to the attribute modified
 
 ### 15.2. cTaskAttrWorkValue2
 
@@ -4664,7 +4664,7 @@ ID for the task amount Task Attribute Work Value2
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): Min number of units required to activate the effect. See Monaspa
+  - [Aura Task](./#1642-ctasktypeaura): Min number of units required to activate the effect. See Monaspa
 
 ### 15.3. cTaskAttrWorkRange
 
@@ -4686,18 +4686,18 @@ ID for the task amount Task Attribute Search Wait Time
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): The attribute to modify. Not all attributes are supported. Known attributes:
-    - [Hit Points](../object_attribute/#1-chitpoints)
-    - [Line of Sight](../object_attribute/#2-clineofsight)
-    - [Movement Speed](../object_attribute/#6-cmovementspeed)
-    - [Attack](../object_attribute/#9-cattack)
-    - [Attack Reload Time](../object_attribute/#10-cattackreloadtime)
-    - [Work Rate](../object_attribute/#13-cworkrate)
-    - [Regeneration Rate](../object_attribute/#101-cregenerationrate)
-    - [Conversion Chance Modifier](../object_attribute/#105-cconversionchancemod)
+  - [Aura Task](./#1642-ctasktypeaura): The attribute to modify. Not all attributes are supported. Known attributes:
+    - [Hit Points](./#111-chitpoints)
+    - [Line of Sight](./#112-clineofsight)
+    - [Movement Speed](./#116-cmovementspeed)
+    - [Attack](./#119-cattack)
+    - [Attack Reload Time](./#1110-cattackreloadtime)
+    - [Work Rate](./#1113-cworkrate)
+    - [Regeneration Rate](./#11101-cregenerationrate)
+    - [Conversion Chance Modifier](./#11105-cconversionchancemod)
     - 116: Melee Armor
     - 117: Pierce Armor
-    - [Regeneration Hp Percent](../object_attribute/#110-cregenerationhppercent)
+    - [Regeneration Hp Percent](./#11110-cregenerationhppercent)
 
 ### 15.6. cTaskAttrCombatLevelFlag
 
@@ -4707,7 +4707,7 @@ ID for the task amount Task Attribute Combat Level Flag
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): Combinable bit-field:
+  - [Aura Task](./#1642-ctasktypeaura): Combinable bit-field:
     - 1: Multiply instead of Add
     - 2: Circular instead of Rectangular radius
     - 4: Range indicator shown

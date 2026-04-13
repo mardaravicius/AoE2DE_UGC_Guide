@@ -10,7 +10,7 @@ Prototype: `#!xs void xsTaskAmount(int taskFieldId, float value)`
 
 Parameters:
 
-1.  `#!xs int taskFieldId`: Specifies which property of the task to change. Refer to [cTaskAttr constants](../../constants/task_attribute "Jump To: XS > Constant Reference > Task Type Constants")
+1.  `#!xs int taskFieldId`: Specifies which property of the task to change. Refer to [cTaskAttr constants](../../constants/constants/#15-task-attribute "Jump To: XS > Constant Reference > 15. Task Type Constants")
 2.  `#!xs float value`: The value to set the task field to
 
 Sets the value of the given field of the global XS task struct to the provided value. See also [xsTask](./#8-xsmodifyobjecttasks). It is recommended to always set all values before inserting or updating a task otherwise the insert/update might fail.
@@ -84,7 +84,7 @@ Prototype: `#!xs float xsGetTaskAmount(int taskFieldId)`
 
 Parameters:
 
-1.  `#!xs int taskFieldId`: The task field to ge the value for. Refer to the [Constant Reference](../../constants/task_attribute "Jump to: XS Scripting > Constant Reference > #13. Task Attribute") for all the different task field IDs
+1.  `#!xs int taskFieldId`: The task field to ge the value for. Refer to the [Constant Reference](../../constants/constants/#15-task-attribute "Jump to: XS Scripting > Constant Reference > 15. Task Attribute") for all the different task field IDs
 
 Returns the given task field from XS' global task struct.
 
@@ -132,7 +132,7 @@ Prototype: `#!xs void xsTask(int objectOrClassId, int actionType, int targetObje
 Parameters:
 
 1.  `#!xs int objectOrClassId`: The object or class ID to add the task to
-2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/task_type "Jump To: XS > Constant Reference > Task Type Constants")
+2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/constants/#16-task-type "Jump To: XS > Constant Reference > 16. Task Type Constants")
 3. (Optional) `#!xs int targetObjectOrClassId`: Target object or class ID for the task to filter by.
 4. (Optional) `#!xs int playerId`: The player to whose objects the task will be inserted. If unspecified or -1, applies to all players except Gaia.
 
@@ -149,7 +149,7 @@ Prototype: `#!xs void xsRemoveTask(int objectOrClassId, int actionType, int targ
 Parameters:
 
 1.  `#!xs int objectOrClassId`: The object or class ID to remove the task from.
-2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/task_type "Jump To: XS > Constant Reference > Task Type Constants")
+2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/constants/#16-task-type "Jump To: XS > Constant Reference > 16. Task Type Constants")
 3. (Optional) `#!xs int targetObjectOrClassId`: Target object or class ID for the task to filter by.
 4. (Optional) `#!xs int playerId`: The player from whose objects the task will be removed. If unspecified or -1, applies to all players except Gaia.
 

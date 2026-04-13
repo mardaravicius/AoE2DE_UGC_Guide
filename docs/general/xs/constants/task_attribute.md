@@ -10,7 +10,7 @@ ID for the task amount Task Attribute Work Value1.
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): Quantity to mul/add to the attribute modified
+  - [Aura Task](./#1642-ctasktypeaura): Quantity to mul/add to the attribute modified
 
 ## 2. cTaskAttrWorkValue2
 
@@ -20,7 +20,7 @@ ID for the task amount Task Attribute Work Value2
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): Min number of units required to activate the effect. See Monaspa
+  - [Aura Task](./#1642-ctasktypeaura): Min number of units required to activate the effect. See Monaspa
 
 ## 3. cTaskAttrWorkRange
 
@@ -42,18 +42,18 @@ ID for the task amount Task Attribute Search Wait Time
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): The attribute to modify. Not all attributes are supported. Known attributes:
-    - [Hit Points](../object_attribute/#1-chitpoints)
-    - [Line of Sight](../object_attribute/#2-clineofsight)
-    - [Movement Speed](../object_attribute/#6-cmovementspeed)
-    - [Attack](../object_attribute/#9-cattack)
-    - [Attack Reload Time](../object_attribute/#10-cattackreloadtime)
-    - [Work Rate](../object_attribute/#13-cworkrate)
-    - [Regeneration Rate](../object_attribute/#101-cregenerationrate)
-    - [Conversion Chance Modifier](../object_attribute/#105-cconversionchancemod)
+  - [Aura Task](./#1642-ctasktypeaura): The attribute to modify. Not all attributes are supported. Known attributes:
+    - [Hit Points](./#111-chitpoints)
+    - [Line of Sight](./#112-clineofsight)
+    - [Movement Speed](./#116-cmovementspeed)
+    - [Attack](./#119-cattack)
+    - [Attack Reload Time](./#1110-cattackreloadtime)
+    - [Work Rate](./#1113-cworkrate)
+    - [Regeneration Rate](./#11101-cregenerationrate)
+    - [Conversion Chance Modifier](./#11105-cconversionchancemod)
     - 116: Melee Armor
     - 117: Pierce Armor
-    - [Regeneration Hp Percent](../object_attribute/#110-cregenerationhppercent)
+    - [Regeneration Hp Percent](./#11110-cregenerationhppercent)
 
 ## 6. cTaskAttrCombatLevelFlag
 
@@ -63,7 +63,7 @@ ID for the task amount Task Attribute Combat Level Flag
 
 Usages per task type:
 
-  - [Aura Task](../task_type/#42-ctasktypeaura): Combinable bit-field:
+  - [Aura Task](./#1642-ctasktypeaura): Combinable bit-field:
     - 1: Multiply instead of Add
     - 2: Circular instead of Rectangular radius
     - 4: Range indicator shown

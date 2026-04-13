@@ -84,7 +84,7 @@ def main():
     for index, (category, constants) in enumerate(const_docs.items(), 1):
         filename = category.replace(" ", "_").replace("/", "_").lower().replace("effectamount", "effect_amount")
         catmd = outmd[:]
-        outmd_old += f"## {index}. {category.title().replace('Effectamount', 'EffectAmount')}\n\n"
+        outmd_old += f"## {index}. {category.title().replace('Effectamount', 'Effect Amount')}\n\n"
 
         for c_index, constant in enumerate(constants, 1):
             catmd += f"## {c_index}. {constant['name']}\n\n"

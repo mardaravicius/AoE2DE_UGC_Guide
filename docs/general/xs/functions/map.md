@@ -48,7 +48,7 @@ Returning Type: `#!xs int`
 Prototype: `#!xs int xsGetColorMood()`
 
 
-Returns the current color mood of the map. Refer to the [Constant Reference](../../constants/color_mood "Jump to: XS Scripting > Constant Reference > Color Mood") for all the different color mood IDs
+Returns the current color mood of the map. Refer to the [Constant Reference](../../constants/constants/#21-color-mood "Jump to: XS Scripting > Constant Reference > 21. Color Mood") for all the different color mood IDs
 
 ## 6. xsSetColorMood
 
@@ -61,7 +61,7 @@ Parameters:
 1.  `#!xs int colorMood`: The color mood to set
 2. (Optional) `#!xs int interval`: The transition duration in seconds
 
-Sets the color mood of the map with a transition time. Refer to the [Constant Reference](../../constants/color_mood "Jump to: XS Scripting > Constant Reference > Color Mood") for all the different color mood IDs
+Sets the color mood of the map with a transition time. Refer to the [Constant Reference](../../constants/constants/#21-color-mood "Jump to: XS Scripting > Constant Reference > 21. Color Mood") for all the different color mood IDs
 
 ## 7. xsTriggerVariable
 

@@ -845,7 +845,7 @@ Parameters:
 1.  `#!xs int techId`: The tech to get the state for
 2.  `#!xs int playerId`: The player to get the tech's state for
 
-Returns one of the [cTechState constants](../../constants/tech_state "Jump To: XS > Constant Reference > Tech State Constants") based on the tech's status
+Returns one of the [cTechState constants](../../constants/constants/#17-tech-state "Jump To: XS > Constant Reference > 17. Tech State Constants") based on the tech's status
 
 ## 7. Player
 
@@ -857,13 +857,13 @@ Prototype: `#!xs void xsEffectAmount(int effectId, int objectOrTechnologyId, int
 
 Parameters:
 
-1.  `#!xs int effectId`: The ID of the effect to use. See the [Effect Type](../../constants/effect_amount_effect_type/ "Jump To: XS > Constant Reference > Effect Amount Effect Type") and [Technology Attribute](../../constants/effect_amount_technology_attribute/ "Jump To: XS > Constant Reference > Effect Amount Tech Attribute") constants
+1.  `#!xs int effectId`: The ID of the effect to use. See the [Effect Type](../../constants/constants/#8-effect-amount-effect-type "Jump To: XS > Constant Reference > 8. Effect Amount Effect Type") and [Technology Attribute](../../constants/constants/#10-effect-amount-technology-attribute "Jump To: XS > Constant Reference > 10. Effect Amount Tech Attribute") constants
 2.  `#!xs int objectOrTechnologyId`: The ID of the object, unit, or technology to effect
-3.  `#!xs int attributeOrOperation`: The attribute to modify or the operation to perform, See the [Effect Operation](../../constants/effect_amount_effect_operations/ "Jump To: XS > Constant Reference > Effect Amount Effect Operation") constants
+3.  `#!xs int attributeOrOperation`: The attribute to modify or the operation to perform, See the [Effect Operation](../../constants/constants/#9-effectamount-effect-operations "Jump To: XS > Constant Reference > 9. Effect Amount Effect Operation") constants
 4.  `#!xs float value`: The value of the effect
 5. (Optional) `#!xs int playerNumber`: The player to apply the effect to. If unspecified, applies to all players except Gaia.
 
-Change the specified attribute of the specified object or technology by the value for the specified player. Note that values for certain attributes such as [sound events](../../constants/object_attribute/#85-cselectionsoundevent) require to be passed after being converted using [bitCastToFloat](../maths/#15-bitcasttofloat).
+Change the specified attribute of the specified object or technology by the value for the specified player. Note that values for certain attributes such as [sound events](../../constants/constants/#1185-cselectionsoundevent) require to be passed after being converted using [bitCastToFloat](./#415-bitcasttofloat).
 
 ### 7.2. xsGetPlayerUnitIds
 
@@ -913,7 +913,7 @@ Parameters:
 
 1.  `#!xs int playerNumber`: The player to get the civilization of
 
-Returns the civilization ID of the given player. Refer to the [Constant Reference](../../constants/aoe2_civs "Jump to: XS Scripting > Constant Reference > #3. Civs") for all the different civ IDs
+Returns the civilization ID of the given player. Refer to the [Constant Reference](../../constants/constants/#5-aoe2-civs "Jump to: XS Scripting > Constant Reference > 5. AoE2 Civs") for all the different civ IDs
 
 ### 7.6. xsGetPlayerInGame
 
@@ -988,7 +988,7 @@ Parameters:
 
 1.  `#!xs int playerId`: The player to get the type for
 
-Returns the type of player. Refer to the [Constant Reference](../../constants/player_type "Jump to: XS Scripting > Constant Reference > #17. Player Type") for all the different player types
+Returns the type of player. Refer to the [Constant Reference](../../constants/constants/#19-player-type "Jump to: XS Scripting > Constant Reference > 19. Player Type") for all the different player types
 
 ### 7.12. xsGetDiplomacy
 
@@ -1025,7 +1025,7 @@ Returning Type: `#!xs int`
 Prototype: `#!xs int xsGetDifficulty()`
 
 
-Returns the difficulty setting for the game. Refer to the [Constant Reference](../../constants/difficulty "Jump to: XS Scripting > Constant Reference > #20. Difficulty") for all the different difficulty IDs
+Returns the difficulty setting for the game. Refer to the [Constant Reference](../../constants/constants/#22-difficulty "Jump to: XS Scripting > Constant Reference > 22. Difficulty") for all the different difficulty IDs
 
 ## 8. Tasks
 
@@ -1037,7 +1037,7 @@ Prototype: `#!xs void xsTaskAmount(int taskFieldId, float value)`
 
 Parameters:
 
-1.  `#!xs int taskFieldId`: Specifies which property of the task to change. Refer to [cTaskAttr constants](../../constants/task_attribute "Jump To: XS > Constant Reference > Task Type Constants")
+1.  `#!xs int taskFieldId`: Specifies which property of the task to change. Refer to [cTaskAttr constants](../../constants/constants/#15-task-attribute "Jump To: XS > Constant Reference > 15. Task Type Constants")
 2.  `#!xs float value`: The value to set the task field to
 
 Sets the value of the given field of the global XS task struct to the provided value. See also [xsTask](./#8-xsmodifyobjecttasks). It is recommended to always set all values before inserting or updating a task otherwise the insert/update might fail.
@@ -1111,7 +1111,7 @@ Prototype: `#!xs float xsGetTaskAmount(int taskFieldId)`
 
 Parameters:
 
-1.  `#!xs int taskFieldId`: The task field to ge the value for. Refer to the [Constant Reference](../../constants/task_attribute "Jump to: XS Scripting > Constant Reference > #13. Task Attribute") for all the different task field IDs
+1.  `#!xs int taskFieldId`: The task field to ge the value for. Refer to the [Constant Reference](../../constants/constants/#15-task-attribute "Jump to: XS Scripting > Constant Reference > 15. Task Attribute") for all the different task field IDs
 
 Returns the given task field from XS' global task struct.
 
@@ -1159,7 +1159,7 @@ Prototype: `#!xs void xsTask(int objectOrClassId, int actionType, int targetObje
 Parameters:
 
 1.  `#!xs int objectOrClassId`: The object or class ID to add the task to
-2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/task_type "Jump To: XS > Constant Reference > Task Type Constants")
+2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/constants/#16-task-type "Jump To: XS > Constant Reference > 16. Task Type Constants")
 3. (Optional) `#!xs int targetObjectOrClassId`: Target object or class ID for the task to filter by.
 4. (Optional) `#!xs int playerId`: The player to whose objects the task will be inserted. If unspecified or -1, applies to all players except Gaia.
 
@@ -1176,13 +1176,13 @@ Prototype: `#!xs void xsRemoveTask(int objectOrClassId, int actionType, int targ
 Parameters:
 
 1.  `#!xs int objectOrClassId`: The object or class ID to remove the task from.
-2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/task_type "Jump To: XS > Constant Reference > Task Type Constants")
+2.  `#!xs int actionType`: Task type. Refer to [cTaskType constants](../../constants/constants/#16-task-type "Jump To: XS > Constant Reference > 16. Task Type Constants")
 3. (Optional) `#!xs int targetObjectOrClassId`: Target object or class ID for the task to filter by.
 4. (Optional) `#!xs int playerId`: The player from whose objects the task will be removed. If unspecified or -1, applies to all players except Gaia.
 
 Removes a task from a object if the specified `actionType`, `objectId`, and `Search Wait Time` (set by [xsTaskAmount](./#1-xstaskamount)) match an existing task in a object. No other fields are used for filtering (same as when [xsTask](./#1-xstask) edits instead of adding a new task)
 
-## 9. Units_Objects
+## 9. Units And Objects
 
 ### 9.1. xsCreateUnit
 
@@ -1226,7 +1226,7 @@ Parameters:
 3.  `#!xs int attribute`: The attribute to get
 4.  `#!xs int damageClass`: For use with armor/attack attributes - specifies which armor/attack class to get
 
-Returns the attribute value for an object. Note that values for certain attributes such as [sound events](../../constants/object_attribute/#85-cselectionsoundevent) must be converted using [bitCastToInt](../maths/#16-bitcasttoint) after being returned.
+Returns the attribute value for an object. Note that values for certain attributes such as [sound events](../../constants/constants/#1185-cselectionsoundevent) must be converted using [bitCastToInt](./#416-bitcasttoint) after being returned.
 
 ### 9.4. xsGetUnitAttribute
 
@@ -1240,7 +1240,7 @@ Parameters:
 2.  `#!xs int attribute`: The attribute to get
 3.  `#!xs int damageClass`: For use with armor/attack attributes - specifies which armor/attack class to get
 
-Returns the attribute value for a specific unit on the map. Note that values for certain attributes such as [sound events](../../constants/object_attribute/#85-cselectionsoundevent) must be converted using [bitCastToInt](../maths/#16-bitcasttoint) after being returned.
+Returns the attribute value for a specific unit on the map. Note that values for certain attributes such as [sound events](../../constants/constants/#1185-cselectionsoundevent) must be converted using [bitCastToInt](./#416-bitcasttoint) after being returned.
 
 ### 9.5. xsDoesUnitExist
 
@@ -1477,7 +1477,7 @@ Parameters:
 
 1.  `#!xs int unitId`: The unit to get the class for
 
-Returns the given unit's class See [cClass constants](../../constants/object_class "Jump To: XS > Constant Reference > Object Class")
+Returns the given unit's class See [cClass constants](../../constants/constants/#12-object-class "Jump To: XS > Constant Reference > 12. Object Class")
 
 ### 9.24. xsGetObjectClass
 
@@ -1490,7 +1490,7 @@ Parameters:
 1.  `#!xs int playerId`: The player to get the object's class for
 2.  `#!xs int objectId`: The object to get the class for
 
-Returns the given object's class for the specified player. See [cClass constants](../../constants/object_class "Jump To: XS > Constant Reference > Object Class")
+Returns the given object's class for the specified player. See [cClass constants](../../constants/constants/#12-object-class "Jump To: XS > Constant Reference > 12. Object Class")
 
 ### 9.25. xsGetUnitType
 
@@ -1502,7 +1502,7 @@ Parameters:
 
 1.  `#!xs int unitId`: The unit to get the type for
 
-Returns the given unit's type. See [cObjectType constants](../../constants/object_type "Jump To: XS > Constant Reference > Object Type")
+Returns the given unit's type. See [cObjectType constants](../../constants/constants/#18-object-type "Jump To: XS > Constant Reference > 18. Object Type")
 
 ### 9.26. xsGetObjectType
 
@@ -1515,7 +1515,7 @@ Parameters:
 1.  `#!xs int playerId`: The player to get the object's type for
 2.  `#!xs int objectId`: The object to get the type for
 
-Returns the given object's type for the specified player. See [cObjectType constants](../../constants/object_type "Jump To: XS > Constant Reference > Object Type")
+Returns the given object's type for the specified player. See [cObjectType constants](../../constants/constants/#18-object-type "Jump To: XS > Constant Reference > 18. Object Type")
 
 ### 9.27. xsGetUnitAttributeTypesHeld
 
@@ -1696,7 +1696,7 @@ Returning Type: `#!xs int`
 Prototype: `#!xs int xsGetColorMood()`
 
 
-Returns the current color mood of the map. Refer to the [Constant Reference](../../constants/color_mood "Jump to: XS Scripting > Constant Reference > Color Mood") for all the different color mood IDs
+Returns the current color mood of the map. Refer to the [Constant Reference](../../constants/constants/#21-color-mood "Jump to: XS Scripting > Constant Reference > 21. Color Mood") for all the different color mood IDs
 
 ### 10.6. xsSetColorMood
 
@@ -1709,7 +1709,7 @@ Parameters:
 1.  `#!xs int colorMood`: The color mood to set
 2. (Optional) `#!xs int interval`: The transition duration in seconds
 
-Sets the color mood of the map with a transition time. Refer to the [Constant Reference](../../constants/color_mood "Jump to: XS Scripting > Constant Reference > Color Mood") for all the different color mood IDs
+Sets the color mood of the map with a transition time. Refer to the [Constant Reference](../../constants/constants/#21-color-mood "Jump to: XS Scripting > Constant Reference > 21. Color Mood") for all the different color mood IDs
 
 ### 10.7. xsTriggerVariable
 
@@ -2003,7 +2003,7 @@ Prototype: `#!xs bool xsOffsetFilePosition(int dataType, bool forward)`
 
 Parameters:
 
-1.  `#!xs int dataType`: The [cOffset constants](../../constants/file_io "Jump To: XS > Constant Reference > File I/O") can be used to specify the datatype used for the offset. Integers and floats are 4 bytes long, vectors are 12 bytes long and strings can be of variable length (specified by the 32 bit int preceding the chars of the string)
+1.  `#!xs int dataType`: The [cOffset constants](../../constants/constants/#1-file-io "Jump To: XS > Constant Reference > 1. File I/O") can be used to specify the datatype used for the offset. Integers and floats are 4 bytes long, vectors are 12 bytes long and strings can be of variable length (specified by the 32 bit int preceding the chars of the string)
 2. (Optional) `#!xs bool forward`: Default: `#!xs true`. Setting this to `#!xs false` will make the file position move back
 
 Moves the file position forward (or backward) relative to the current file position, and by an amount of bytes equivalent to reading the given data type
@@ -2160,7 +2160,7 @@ Prototype: `#!xs bool xsAddRuntimeEvent(string runtimeName, string functionName,
 
 Parameters:
 
-1.  `#!xs string runtimeName`: This is the name of the runtime to create the event in. This should be `"Random Map"` for RMS and `"Scenario Triggers"` for scenarios. Find which one to use in a general script by using the `#!xs xsGetMapName(true)` [function](../map/#1-xsgetmapname "Jump To: Function Reference > xsGetMapName") and checking the extension. To use with an AI, set the runtime name to "Expert" and pass the player number as the arg
+1.  `#!xs string runtimeName`: This is the name of the runtime to create the event in. This should be `"Random Map"` for RMS and `"Scenario Triggers"` for scenarios. Find which one to use in a general script by using the `#!xs xsGetMapName(true)` [function](./#101-xsgetmapname "Jump To: Function Reference > xsGetMapName") and checking the extension. To use with an AI, set the runtime name to "Expert" and pass the player number as the arg
 2.  `#!xs string functionName`: This is the name of a user defined function that takes a single integer argument
 3.  `#!xs int functionArgument`: This is an integer argument that is passed to the function given to the argument `functionName` when this event runs.
 

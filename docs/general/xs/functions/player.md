@@ -10,13 +10,13 @@ Prototype: `#!xs void xsEffectAmount(int effectId, int objectOrTechnologyId, int
 
 Parameters:
 
-1.  `#!xs int effectId`: The ID of the effect to use. See the [Effect Type](../../constants/effect_amount_effect_type/ "Jump To: XS > Constant Reference > Effect Amount Effect Type") and [Technology Attribute](../../constants/effect_amount_technology_attribute/ "Jump To: XS > Constant Reference > Effect Amount Tech Attribute") constants
+1.  `#!xs int effectId`: The ID of the effect to use. See the [Effect Type](../../constants/constants/#8-effect-amount-effect-type "Jump To: XS > Constant Reference > 8. Effect Amount Effect Type") and [Technology Attribute](../../constants/constants/#10-effect-amount-technology-attribute "Jump To: XS > Constant Reference > 10. Effect Amount Tech Attribute") constants
 2.  `#!xs int objectOrTechnologyId`: The ID of the object, unit, or technology to effect
-3.  `#!xs int attributeOrOperation`: The attribute to modify or the operation to perform, See the [Effect Operation](../../constants/effect_amount_effect_operations/ "Jump To: XS > Constant Reference > Effect Amount Effect Operation") constants
+3.  `#!xs int attributeOrOperation`: The attribute to modify or the operation to perform, See the [Effect Operation](../../constants/constants/#9-effectamount-effect-operations "Jump To: XS > Constant Reference > 9. Effect Amount Effect Operation") constants
 4.  `#!xs float value`: The value of the effect
 5. (Optional) `#!xs int playerNumber`: The player to apply the effect to. If unspecified, applies to all players except Gaia.
 
-Change the specified attribute of the specified object or technology by the value for the specified player. Note that values for certain attributes such as [sound events](../../constants/object_attribute/#85-cselectionsoundevent) require to be passed after being converted using [bitCastToFloat](../maths/#15-bitcasttofloat).
+Change the specified attribute of the specified object or technology by the value for the specified player. Note that values for certain attributes such as [sound events](../../constants/constants/#1185-cselectionsoundevent) require to be passed after being converted using [bitCastToFloat](./#415-bitcasttofloat).
 
 ## 2. xsGetPlayerUnitIds
 
@@ -66,7 +66,7 @@ Parameters:
 
 1.  `#!xs int playerNumber`: The player to get the civilization of
 
-Returns the civilization ID of the given player. Refer to the [Constant Reference](../../constants/aoe2_civs "Jump to: XS Scripting > Constant Reference > #3. Civs") for all the different civ IDs
+Returns the civilization ID of the given player. Refer to the [Constant Reference](../../constants/constants/#5-aoe2-civs "Jump to: XS Scripting > Constant Reference > 5. AoE2 Civs") for all the different civ IDs
 
 ## 6. xsGetPlayerInGame
 
@@ -141,7 +141,7 @@ Parameters:
 
 1.  `#!xs int playerId`: The player to get the type for
 
-Returns the type of player. Refer to the [Constant Reference](../../constants/player_type "Jump to: XS Scripting > Constant Reference > #17. Player Type") for all the different player types
+Returns the type of player. Refer to the [Constant Reference](../../constants/constants/#19-player-type "Jump to: XS Scripting > Constant Reference > 19. Player Type") for all the different player types
 
 ## 12. xsGetDiplomacy
 
@@ -178,5 +178,5 @@ Returning Type: `#!xs int`
 Prototype: `#!xs int xsGetDifficulty()`
 
 
-Returns the difficulty setting for the game. Refer to the [Constant Reference](../../constants/difficulty "Jump to: XS Scripting > Constant Reference > #20. Difficulty") for all the different difficulty IDs
+Returns the difficulty setting for the game. Refer to the [Constant Reference](../../constants/constants/#22-difficulty "Jump to: XS Scripting > Constant Reference > 22. Difficulty") for all the different difficulty IDs
 
