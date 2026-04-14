@@ -16,3 +16,13 @@ syntactically valid XS code.
 ## AoM:EE XS Reference
 
 [https://mythicfreak.github.io/aomcodereference](https://mythicfreak.github.io/aomcodereference)
+
+## AoE2:DE XS Libraries
+
+### XS Structs
+
+[https://github.com/KSneijders/XsStructs](https://github.com/KSneijders/XsStructs)
+
+### XS Collections and Other Utilities
+
+[https://github.com/mardaravicius/aoe2de_xslibs](https://github.com/mardaravicius/aoe2de_xslibs)
