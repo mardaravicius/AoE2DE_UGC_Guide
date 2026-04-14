@@ -510,7 +510,7 @@ This is the attribute [Selection Sound](../../../attributes/attributes/#92-selec
 
 Value: `#!xs int 93`
 
-This is the attribute [Selection Sound Event](../../../attributes/attributes/#93-selection-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Selection Sound Event](../../../attributes/attributes/#93-selection-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ## 86. cDyingSound
 
@@ -522,7 +522,7 @@ This is the attribute [Dying Sound](../../../attributes/attributes/#94-dying-sou
 
 Value: `#!xs int 95`
 
-This is the attribute [Dying Sound Event](../../../attributes/attributes/#95-dying-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Dying Sound Event](../../../attributes/attributes/#95-dying-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ## 88. cTrainSound
 
@@ -534,7 +534,7 @@ This is the attribute [Train Sound](../../../attributes/attributes/#96-train-sou
 
 Value: `#!xs int 97`
 
-This is the attribute [Train Sound Event](../../../attributes/attributes/#97-train-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Train Sound Event](../../../attributes/attributes/#97-train-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ## 90. cDamageSound
 
@@ -546,7 +546,7 @@ This is the attribute [Damage Sound](../../../attributes/attributes/#98-damage-s
 
 Value: `#!xs int 99`
 
-This is the attribute [Damage Sound Event](../../../attributes/attributes/#99-damage-sound-event) Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Damage Sound Event](../../../attributes/attributes/#99-damage-sound-event) Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/#415-bitcasttofloat) and [bitCastToInt](../../functions/functions/#416-bitcasttoint) respectively.
 
 ## 92. cResourceCost
 
@@ -738,7 +738,7 @@ This is the attribute [Command Sound](../../../attributes/attributes/#132-comman
 
 Value: `#!xs int 133`
 
-This is the attribute [Command Sound Event](../../../attributes/attributes/#133-command-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Command Sound Event](../../../attributes/attributes/#133-command-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ## 124. cMoveSound
 
@@ -750,7 +750,7 @@ This is the attribute [Move Sound](../../../attributes/attributes/#134-move-soun
 
 Value: `#!xs int 135`
 
-This is the attribute [Move Sound Event](../../../attributes/attributes/#135-move-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Move Sound Event](../../../attributes/attributes/#135-move-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ## 126. cConstructionSound
 
@@ -762,7 +762,7 @@ This is the attribute [Construction Sound](../../../attributes/attributes/#136-c
 
 Value: `#!xs int 137`
 
-This is the attribute [Construction Sound Event](../../../attributes/attributes/#137-construction-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Construction Sound Event](../../../attributes/attributes/#137-construction-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ## 128. cTransformSound
 
@@ -774,7 +774,7 @@ This is the attribute [Transform Sound](../../../attributes/attributes/#138-tran
 
 Value: `#!xs int 139`
 
-This is the attribute [Transform Sound Event](../../../attributes/attributes/#139-transform-sound-event). Note: When using with [xsEffectAmount](../../functions/player/#1-xseffectamount) or one of [xsGetObjectAttribute](../../functions/units_objects/#3-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/units_objects/#4-xsgetunitattribute), values require to be converted using [bitCastToFloat](../maths/#15-bitcasttofloat) and [bitCastToInt](../maths/#16-bitcasttoint) respectively.
+This is the attribute [Transform Sound Event](../../../attributes/attributes/#139-transform-sound-event). Note: When using with [xsEffectAmount](../../functions/functions/#71-xseffectamount) or one of [xsGetObjectAttribute](../../functions/functions/#93-xsgetobjectattribute) or [xsGetUnitAttribute](../../functions/functions/#94-xsgetunitattribute), values require to be converted using [bitCastToFloat](../../functions/functions/maths/#15-bitcasttofloat) and [bitCastToInt](../../functions/functions/maths/#16-bitcasttoint) respectively.
 
 ## 130. cRunPattern
 
