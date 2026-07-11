@@ -62,7 +62,10 @@ xsResetTaskAmount();
 
 xsTaskAmount(cTaskAttrWorkRange, range);
 xsTaskAmount(cTaskAttrOwnerType, gaiaYouAndAlly);
-xsTaskAmount(cTaskAttrTaskType, cTaskTypeGarrison); xsTaskAmount(cTaskAttrObjectClass, cBuildingClass); xsModifyObjectTasks(scorpion, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeGarrison);
+xsTaskAmount(cTaskAttrObjectClass, cBuildingClass);
+
+xsModifyObjectTasks(scorpion, player);
 ```
 
 ## 4. Explore
@@ -264,8 +267,10 @@ xsResetTaskAmount();
 xsTaskAmount(cTaskAttrWorkValue1, workRateMultiplier);
 xsTaskAmount(cTaskAttrWorkRange, buildRange);
 xsTaskAmount(cTaskAttrProceedingGraphic, obuchAttackGraphic);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeBuild);
+xsTaskAmount(cTaskAttrObjectId, fortress);
 
-xsTask(obuch, cTaskTypeBuild, fortress, player);
+xsModifyObjectTasks(obuch, player);
 ```
 
 ## 102. Make unit
@@ -561,7 +566,9 @@ const int genghis = 731;
 xsResetTaskAmount();
 
 xsTaskAmount(cTaskAttrWorkValue1, genghis);
-xsTask(mangudai, cTaskTypePickupUnit, cRelicClass, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypePickupUnit);
+xsTaskAmount(cTaskAttrObjectClass, cRelicClass);
+xsModifyObjectTasks(mangudai, player);
 ```
 
 ## 133. Charge attack
@@ -668,7 +675,9 @@ xsRemoveTask(scout, cTaskTypeCombat, -1, player);
 
 xsResetTaskAmount();
 xsTaskAmount(cTaskAttrOwnerType, neutralAndEnemy);
-xsTask(scout, cTaskTypeKidnapUnit, cVillagerClass, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeKidnapUnit);
+xsTaskAmount(cTaskAttrObjectClass, cVillagerClass);
+xsModifyObjectTasks(scout, player);
 ```
 
 ## 136. Deposit unit
@@ -728,9 +737,16 @@ xsTaskAmount(cTaskAttrWorkValue1, resourceGainRate);
 xsTaskAmount(cTaskAttrProductivityResource, productivityResource);
 xsTaskAmount(cTaskAttrResourceOut, resourceToGain);
 
-xsTask(attila, cTaskTypeGenerateResources, cInfantryClass, player);
-xsTask(attila, cTaskTypeGenerateResources, cArcherClass, player);
-xsTask(attila, cTaskTypeGenerateResources, cCavalryClass, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeGenerateResources);
+
+xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);
+xsModifyObjectTasks(attila, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cArcherClass);
+xsModifyObjectTasks(attila, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);
+xsModifyObjectTasks(attila, player);
 ```
 
 ## 152. Movement damage
@@ -762,7 +778,8 @@ xsResetTaskAmount();
 
 xsTaskAmount(cTaskAttrWorkValue1, damage);
 xsTaskAmount(cTaskAttrWorkValue2, time);
-xsTaskAmount(cTaskAttrWorkRange, range); 
+xsTaskAmount(cTaskAttrWorkRange, range);
+
 xsTask(elephant, cTaskTypeMovementDamage, -1, player);
 ```
 
@@ -922,11 +939,19 @@ xsTaskAmount(cTaskAttrWorkValue1, value);
 xsTaskAmount(cTaskAttrWorkValue2, unitsInRangeToActivate);
 xsTaskAmount(cTaskAttrWorkRange, auraRange);
 xsTaskAmount(cTaskAttrSearchWaitTime, attribute);
-xsTaskAmount(cTaskAttrCombatLevelFlag, circularFlag + visibleFlag + translucentFlag); xsTaskAmount(cTaskAttrOwnerType, gaiaYouAndAlly);
+xsTaskAmount(cTaskAttrCombatLevelFlag, circularFlag + visibleFlag + translucentFlag);
+xsTaskAmount(cTaskAttrOwnerType, gaiaYouAndAlly);
 
-xsTask(joanOfArc, cTaskTypeAura, cInfantryClass, player);
-xsTask(joanOfArc, cTaskTypeAura, cArcherClass, player);
-xsTask(joanOfArc, cTaskTypeAura, cCavalryClass, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeAura);
+
+xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);
+xsModifyObjectTasks(joanOfArc, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cArcherClass);
+xsModifyObjectTasks(joanOfArc, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);
+xsModifyObjectTasks(joanOfArc, player);
 ```
 
 <h3>XS example 2</h3>
@@ -957,7 +982,7 @@ xsEffectAmount(cSetAttribute, joanOfArc, cCombatAbility, auraAbility, player);
 xsEffectAmount(cSetAttribute, joanOfArc, cChargeType, enableTempAuraType, player);
 xsEffectAmount(cSetAttribute, joanOfArc, cChargeEvent, tempAuraDuration, player);
 xsEffectAmount(cSetAttribute, joanOfArc, cMaxCharge, maximumCharge, player);
-xsEffectAmount(cSetAttribute, joanOfArc, maximumCharge / tempAuraCooldown, player);
+xsEffectAmount(cSetAttribute, joanOfArc, cRechargeRate, maximumCharge / tempAuraCooldown, player);
 xsEffectAmount(cSetAttribute, joanOfArc, cButtonIconId, buttonIcon, player);
 
 xsResetTaskAmount();
@@ -969,9 +994,16 @@ xsTaskAmount(cTaskAttrSearchWaitTime, attribute);
 xsTaskAmount(cTaskAttrCombatLevelFlag, multiplyFlag + circularFlag + temporaryAuraFlag + remainsWhenLeavingRangeFlag);
 xsTaskAmount(cTaskAttrOwnerType, gaiaYouAndAlly);
 
-xsTask(joanOfArc, cTaskTypeAura, cInfantryClass, player);
-xsTask(joanOfArc, cTaskTypeAura, cArcherClass, player);
-xsTask(joanOfArc, cTaskTypeAura, cCavalryClass, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeAura);
+
+xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);
+xsModifyObjectTasks(joanOfArc, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cArcherClass);
+xsModifyObjectTasks(joanOfArc, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);
+xsModifyObjectTasks(joanOfArc, player);
 ```
 
 ## 156. Additional spawn
@@ -1059,9 +1091,16 @@ xsTaskAmount(cTaskAttrWorkRange, affectTarget);
 xsTaskAmount(cTaskAttrSearchWaitTime, attribute);
 xsTaskAmount(cTaskAttrCombatLevelFlag, multiplyFlag + dontStackFlag);
 
-xsTask(joanOfArc, cTaskTypeStinger, cInfantryClass, player);
-xsTask(joanOfArc, cTaskTypeStinger, cArcherClass, player);
-xsTask(joanOfArc, cTaskTypeStinger, cCavalryClass, player);
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeStinger);
+
+xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);
+xsModifyObjectTasks(joanOfArc, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cArcherClass);
+xsModifyObjectTasks(joanOfArc, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);
+xsModifyObjectTasks(joanOfArc, player);
 ```
 
 ## 158. HP transformation
