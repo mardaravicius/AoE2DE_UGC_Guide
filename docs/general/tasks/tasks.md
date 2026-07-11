@@ -758,7 +758,8 @@ const float damage = 2.5;
 const float time = 0.5;
 const float range = 0.75;
 
-xsResetTaskAmount(); 
+xsResetTaskAmount();
+
 xsTaskAmount(cTaskAttrWorkValue1, damage);
 xsTaskAmount(cTaskAttrWorkValue2, time);
 xsTaskAmount(cTaskAttrWorkRange, range); 
@@ -838,17 +839,25 @@ const int levelUpGraphic = 12263;
 const int statGainId = 1;
 
 xsResetTaskAmount();
- xsTaskAmount(cTaskAttrTaskType, cTaskTypeLoot);
+
+xsTaskAmount(cTaskAttrTaskType, cTaskTypeLoot);
 xsTaskAmount(cTaskAttrWorkFlag2, maxNumberOfStatGains);
 xsTaskAmount(cTaskAttrSearchWaitTime, attribute);
 xsTaskAmount(cTaskAttrCombatLevelFlag, gainAttributesFlag);
 xsTaskAmount(cTaskAttrProceedingGraphic, levelUpGraphic);
 xsTaskAmount(cTaskAttrCarryCheck, statGainId);
 xsTaskAmount(cTaskAttrGatherType, amountToGain);
- xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);
-xsModifyObjectTasks(mangudai, player); xsTaskAmount(cTaskAttrObjectClass, cArcherClass);
-xsModifyObjectTasks(mangudai, player); xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);
-xsModifyObjectTasks(mangudai, player); xsTaskAmount(cTaskAttrObjectClass, cSiegeWeaponClass);
+
+xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);
+xsModifyObjectTasks(mangudai, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cArcherClass);
+xsModifyObjectTasks(mangudai, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);
+xsModifyObjectTasks(mangudai, player);
+
+xsTaskAmount(cTaskAttrObjectClass, cSiegeWeaponClass);
 xsModifyObjectTasks(mangudai, player);
 ```
 
@@ -1137,6 +1146,28 @@ xsTask(berserk, cTaskTypeHPTransform, -1, player);
 | 2 | Work range | If 0, check the unit's own HP. If > 0, compare the current target's HP. |
 | 4 | Search wait time | ID of the object attribute modified by this task. Attributes known to be supported include: **[Attack (9)](../../attributes/attributes/#9-attack)**. |
 
+<h3>XS example</h3>
+
+```xs
+/* This code makes player 1 throwing axeman unit gain +2 attack for each 20% of hp that it lost */
+
+const int player = 1;
+const int throwingAxeman = 281;
+const int value = 2;
+const float hpPercent = 0.2;
+const int compareToTargetHp = 0;
+const int attribute = cAttack;
+
+xsResetTaskAmount();
+
+xsTaskAmount(cTaskAttrWorkValue1, value);
+xsTaskAmount(cTaskAttrWorkValue2, hpPercent);
+xsTaskAmount(cTaskAttrWorkRange, compareToTargetHp);
+xsTaskAmount(cTaskAttrSearchWaitTime, attribute);
+
+xsTask(throwingAxeman, cTaskTypeHPModifier, -1, player);
+```
+
 ## 161. Unit refund
 
 - ID: 161
@@ -1152,3 +1183,27 @@ xsTask(berserk, cTaskTypeHPTransform, -1, player);
 | 5 | Combat level flag | If 0, use Work Value 1 as a flat value to grant. If 1, use Work Value 1 as a fraction of the unit's associated resource cost. |
 | 9 | Productivity resource | If set, multiply Work Value 1 by the value of this resource. |
 | 10 | Resource out | Resource to refund. |
+
+<h3>XS example</h3>
+
+```xs
+/* This code makes 10 gold be refunded to player 1 when a monk unit is killed */
+
+const int player = 1;
+const int monk = 125;
+const int monkWithRelic = 286;
+const int value = 10;
+const int grantToKiller = 0;
+const int valueIsFractionOfCost = 0;
+const int resource = cAttributeGold;
+
+xsResetTaskAmount();
+
+xsTaskAmount(cTaskAttrWorkValue1, value);
+xsTaskAmount(cTaskAttrWorkRange, grantToKiller);
+xsTaskAmount(cTaskAttrCombatLevelFlag, valueIsFractionOfCost);
+xsTaskAmount(cTaskAttrResourceOut, resource);
+
+xsTask(monk, cTaskTypeRefund, -1, player);
+xsTask(monkWithRelic, cTaskTypeRefund, -1, player);
+```

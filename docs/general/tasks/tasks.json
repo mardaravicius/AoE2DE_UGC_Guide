@@ -1149,7 +1149,7 @@
             }
         ],
         "xs_examples": [
-            "/* This code gives player 1 war elephant an ability to damage enemy units while moving in a 0.75 range twice per second for 2.5 damage */\n\nconst int player = 1;\nconst int elephant = 239;\nconst float damage = 2.5;\nconst float time = 0.5;\nconst float range = 0.75;\n\nxsResetTaskAmount(); \nxsTaskAmount(cTaskAttrWorkValue1, damage);\nxsTaskAmount(cTaskAttrWorkValue2, time);\nxsTaskAmount(cTaskAttrWorkRange, range); \nxsTask(elephant, cTaskTypeMovementDamage, -1, player);"
+            "/* This code gives player 1 war elephant an ability to damage enemy units while moving in a 0.75 range twice per second for 2.5 damage */\n\nconst int player = 1;\nconst int elephant = 239;\nconst float damage = 2.5;\nconst float time = 0.5;\nconst float range = 0.75;\n\nxsResetTaskAmount();\n\nxsTaskAmount(cTaskAttrWorkValue1, damage);\nxsTaskAmount(cTaskAttrWorkValue2, time);\nxsTaskAmount(cTaskAttrWorkRange, range); \nxsTask(elephant, cTaskTypeMovementDamage, -1, player);"
         ]
     },
     "153": {
@@ -1276,7 +1276,7 @@
         ],
         "xs_examples": [
             "/* This code makes player 1 Attila the Hun gain 2 gold when killing enemy unit or destroying an enemy building */\n\nconst int player = 1;\nconst int attila = 777;\nconst float resourceGainRate = 2.0;\nconst int resourceToGain = cAttributeGold;\n\nxsResetTaskAmount();\n\nxsTaskAmount(cTaskAttrWorkValue1, resourceGainRate);\nxsTaskAmount(cTaskAttrResourceOut, resourceToGain);\n\nxsTask(attila, cTaskTypeLoot, -1, player);",
-            "/* This code makes player 1 mangudai gain 1 attack every time they kill an infantry, archer, cavalry or siege unit to a maximum of 5 */\n\nconst int player = 1;\nconst int mangudai = 11;\nconst int maxNumberOfStatGains = 5;\nconst int gainAttributesFlag = 1;\nconst int attribute = cAttack;\nconst float amountToGain = 1.0;\nconst int levelUpGraphic = 12263;\nconst int statGainId = 1;\n\nxsResetTaskAmount();\n xsTaskAmount(cTaskAttrTaskType, cTaskTypeLoot);\nxsTaskAmount(cTaskAttrWorkFlag2, maxNumberOfStatGains);\nxsTaskAmount(cTaskAttrSearchWaitTime, attribute);\nxsTaskAmount(cTaskAttrCombatLevelFlag, gainAttributesFlag);\nxsTaskAmount(cTaskAttrProceedingGraphic, levelUpGraphic);\nxsTaskAmount(cTaskAttrCarryCheck, statGainId);\nxsTaskAmount(cTaskAttrGatherType, amountToGain);\n xsTaskAmount(cTaskAttrObjectClass, cInfantryClass);\nxsModifyObjectTasks(mangudai, player); xsTaskAmount(cTaskAttrObjectClass, cArcherClass);\nxsModifyObjectTasks(mangudai, player); xsTaskAmount(cTaskAttrObjectClass, cCavalryClass);\nxsModifyObjectTasks(mangudai, player); xsTaskAmount(cTaskAttrObjectClass, cSiegeWeaponClass);\nxsModifyObjectTasks(mangudai, player);"
+            "/* This code makes player 1 mangudai gain 1 attack every time they kill an infantry, archer, cavalry or siege unit to a maximum of 5 */\n\nconst int player = 1;\nconst int mangudai = 11;\nconst int maxNumberOfStatGains = 5;\nconst int gainAttributesFlag = 1;\nconst int attribute = cAttack;\nconst float amountToGain = 1.0;\nconst int levelUpGraphic = 12263;\nconst int statGainId = 1;\n\nxsResetTaskAmount();\n\nxsTaskAmount(cTaskAttrTaskType, cTaskTypeLoot);\nxsTaskAmount(cTaskAttrWorkFlag2, maxNumberOfStatGains);\nxsTaskAmount(cTaskAttrSearchWaitTime, attribute);\nxsTaskAmount(cTaskAttrCombatLevelFlag, gainAttributesFlag);\nxsTaskAmount(cTaskAttrProceedingGraphic, levelUpGraphic);\nxsTaskAmount(cTaskAttrCarryCheck, statGainId);\nxsTaskAmount(cTaskAttrGatherType, amountToGain);\n\nxsTaskAmount(cTaskAttrObjectClass, cInfantryClass);\nxsModifyObjectTasks(mangudai, player);\n\nxsTaskAmount(cTaskAttrObjectClass, cArcherClass);\nxsModifyObjectTasks(mangudai, player);\n\nxsTaskAmount(cTaskAttrObjectClass, cCavalryClass);\nxsModifyObjectTasks(mangudai, player);\n\nxsTaskAmount(cTaskAttrObjectClass, cSiegeWeaponClass);\nxsModifyObjectTasks(mangudai, player);"
         ]
     },
     "155": {
@@ -1666,7 +1666,9 @@
                 "description": "ID of the object attribute modified by this task. Attributes known to be supported include: **Attack (9)**."
             }
         ],
-        "xs_examples": []
+        "xs_examples": [
+            "/* This code makes player 1 throwing axeman unit gain +2 attack for each 20% of hp that it lost */\n\nconst int player = 1;\nconst int throwingAxeman = 281;\nconst int value = 2;\nconst float hpPercent = 0.2;\nconst int compareToTargetHp = 0;\nconst int attribute = cAttack;\n\nxsResetTaskAmount();\n\nxsTaskAmount(cTaskAttrWorkValue1, value);\nxsTaskAmount(cTaskAttrWorkValue2, hpPercent);\nxsTaskAmount(cTaskAttrWorkRange, compareToTargetHp);\nxsTaskAmount(cTaskAttrSearchWaitTime, attribute);\n\nxsTask(throwingAxeman, cTaskTypeHPModifier, -1, player);"
+        ]
     },
     "161": {
         "name": "Unit refund",
@@ -1704,6 +1706,8 @@
                 "description": "Resource to refund."
             }
         ],
-        "xs_examples": []
+        "xs_examples": [
+            "/* This code makes 10 gold be refunded to player 1 when a monk unit is killed */\n\nconst int player = 1;\nconst int monk = 125;\nconst int monkWithRelic = 286;\nconst int value = 10;\nconst int grantToKiller = 0;\nconst int valueIsFractionOfCost = 0;\nconst int resource = cAttributeGold;\n\nxsResetTaskAmount();\n\nxsTaskAmount(cTaskAttrWorkValue1, value);\nxsTaskAmount(cTaskAttrWorkRange, grantToKiller);\nxsTaskAmount(cTaskAttrCombatLevelFlag, valueIsFractionOfCost);\nxsTaskAmount(cTaskAttrResourceOut, resource);\n\nxsTask(monk, cTaskTypeRefund, -1, player);\nxsTask(monkWithRelic, cTaskTypeRefund, -1, player);"
+        ]
     }
 }
