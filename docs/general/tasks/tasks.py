@@ -47,8 +47,8 @@ def attributes_table(
     object_attribute_docs: dict[str, dict[str, Any]],
 ) -> str:
     lines = [
-        "| ID | Attribute | Description |",
-        "| --: | :-- | :-- |",
+        "| XS constant | Description |",
+        "| :-- | :-- |",
     ]
 
     sorted_attributes = sorted(
@@ -60,14 +60,16 @@ def attributes_table(
     )
 
     for attribute in sorted_attributes:
-        attribute_id = attribute["id"] if attribute["available"] else "Unavailable"
+        if attribute["available"]:
+            constant = attribute["xs_constant"]
+        else:
+            constant = f"**Unavailable** — {attribute['name']}"
         description = attribute["description"]
         if attribute["name"] == "Owner type":
             values = "; ".join(f"**{value}** — {meaning}" for value, meaning in OWNER_TYPE_VALUES)
             description += f" Values: {values}."
         lines.append(
-            f"| {table_cell(attribute_id)} "
-            f"| {table_cell(attribute['name'])} "
+            f"| {table_cell(constant)} "
             f"| {table_cell(link_object_attributes(description, object_attribute_docs))} |"
         )
 
@@ -89,7 +91,7 @@ def generate(
         "and XS examples where available. If a task or description is incomplete "
         "or incorrect, please let the authors of this guide know!",
         "",
-        "Attributes without an available ID are marked **Unavailable** in the ID column.",
+        "Attributes without an available XS constant are marked **Unavailable**.",
         "",
     ]
 

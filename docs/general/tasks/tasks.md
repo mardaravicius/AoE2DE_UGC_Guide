@@ -6,7 +6,7 @@
 
 This page lists unit task types, the object and task attributes they use, and XS examples where available. If a task or description is incomplete or incorrect, please let the authors of this guide know!
 
-Attributes without an available ID are marked **Unavailable** in the ID column.
+Attributes without an available XS constant are marked **Unavailable**.
 
 ## 1. Move to
 
@@ -28,20 +28,20 @@ Attributes without an available ID are marked **Unavailable** in the ID column.
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 2 | Garrison capacity | Target object must have some capacity for the current unit to garrison to. |
-| 30 | Garrison type | If target object is a building, it must have a garrison type that matches current unit's type. |
-| 54 | Traits | If target object is a unit, it must have this bitfield 1st bit (1) set for garrison unit. |
+| XS constant | Description |
+| :-- | :-- |
+| cGarrisonCapacity | Target object must have some capacity for the current unit to garrison to. |
+| cGarrisonType | If target object is a building, it must have a garrison type that matches current unit's type. |
+| cTraits | If target object is a unit, it must have this bitfield 1st bit (1) set for garrison unit. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 2 | Work range | Range at which a unit can garrison. |
-| 6 | Owner type | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
-| 29 | Object id | Object in which a unit can garrison. |
-| 30 | Object class | Object in which a unit can garrison. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkRange | Range at which a unit can garrison. |
+| cTaskAttrOwnerType | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
+| cTaskAttrObjectId | Object in which a unit can garrison. |
+| cTaskAttrObjectClass | Object in which a unit can garrison. |
 
 <h3>XS example</h3>
 
@@ -112,25 +112,25 @@ xsModifyObjectTasks(scorpion, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 72 | Standing Graphic 2 | Used instead of the task's **Working graphic (14)**. Graphic while moving, if not set uses moving graphic. |
-| 75 | Walking graphic | Used if **[Standing Graphic 2 (72)](../../attributes/attributes/#72-standing-graphic-2)** or the task's **Working graphic (14)** is not set. |
+| XS constant | Description |
+| :-- | :-- |
+| cStanding2Graphic | Used instead of the task's **Working graphic (14)**. Graphic while moving, if not set uses moving graphic. |
+| cWalkingGraphic | Used if **[Standing Graphic 2 (72)](../../attributes/attributes/#72-standing-graphic-2)** or the task's **Working graphic (14)** is not set. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Unit speed multiplier while roaming. |
-| 1 | Work value 2 | Unit ID to avoid. |
-| 2 | Work range | Minimum distance to the unit to avoid that will be maintained while roaming. |
-| 4 | Search wait time | Time in seconds that the unit pauses, playing the idle animations, when changing direction. |
-| 5 | Combat level flag | If set to 1, only roam around if the unit is owned by Gaia. |
-| 7 | Terrain | Terrain Table that the unit will be allowed to roam on. If -1, use the unit's terrain table. |
-| 12 | Moving graphic | Graphics used for the unit moving around, randomly alternates between them. |
-| 13 | Proceeding graphic | Graphics used for the unit moving around, randomly alternates between them. |
-| 14 | Working graphic | Graphics used for the unit moving around, randomly alternates between them. |
-| 23 | Carry check | Distance the unit is allowed to move from its starting position before picking a new direction to return closer. If 0, no limit. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Unit speed multiplier while roaming. |
+| cTaskAttrWorkValue2 | Unit ID to avoid. |
+| cTaskAttrWorkRange | Minimum distance to the unit to avoid that will be maintained while roaming. |
+| cTaskAttrSearchWaitTime | Time in seconds that the unit pauses, playing the idle animations, when changing direction. |
+| cTaskAttrCombatLevelFlag | If set to 1, only roam around if the unit is owned by Gaia. |
+| cTaskAttrTerrain | Terrain Table that the unit will be allowed to roam on. If -1, use the unit's terrain table. |
+| cTaskAttrMovingGraphic | Graphics used for the unit moving around, randomly alternates between them. |
+| cTaskAttrProceedingGraphic | Graphics used for the unit moving around, randomly alternates between them. |
+| cTaskAttrWorkingGraphic | Graphics used for the unit moving around, randomly alternates between them. |
+| cTaskAttrCarryCheck | Distance the unit is allowed to move from its starting position before picking a new direction to return closer. If 0, no limit. |
 
 ## 11. Scare/hunt
 
@@ -146,10 +146,10 @@ xsModifyObjectTasks(scorpion, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 1 | Work value 2 | Unknown. |
-| 7 | Terrain | Terrain on which unit can unload. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue2 | Unknown. |
+| cTaskAttrTerrain | Terrain on which unit can unload. |
 
 <h3>XS example</h3>
 
@@ -193,14 +193,14 @@ xsTask(berserk, cTaskTypeGarrison, cWarshipClass, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 1 | Work value 2 | Unknown. |
-| 2 | Work range | Unknown. |
-| 14 | Working graphic | Graphic of the unit when unloading. |
-| 23 | Carry check | Unknown. |
-| 29 | Object id | Building id or class over which to unload units. |
-| 30 | Object class | Building id or class over which to unload units. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue2 | Unknown. |
+| cTaskAttrWorkRange | Unknown. |
+| cTaskAttrWorkingGraphic | Graphic of the unit when unloading. |
+| cTaskAttrCarryCheck | Unknown. |
+| cTaskAttrObjectId | Building id or class over which to unload units. |
+| cTaskAttrObjectClass | Building id or class over which to unload units. |
 
 ## 21. Make
 
@@ -210,11 +210,11 @@ xsTask(berserk, cTaskTypeGarrison, cWarshipClass, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Unknown. |
-| 8 | Resource in | Unknown; resource being collected. |
-| 9 | Productivity resource | Unknown, sometimes resource being deposited to. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Unknown. |
+| cTaskAttrResourceIn | Unknown; resource being collected. |
+| cTaskAttrProductivityResource | Unknown, sometimes resource being deposited to. |
 
 ## 101. Build
 
@@ -224,26 +224,26 @@ xsTask(berserk, cTaskTypeGarrison, cWarshipClass, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 13 | Work rate | Rate at which the unit builds. |
-| 54 | Traits | Set this bitfield 3rd bit (4) to enable military units to build 1 building. |
-| 56 | Trait piece | Building id to build. |
+| XS constant | Description |
+| :-- | :-- |
+| cWorkRate | Rate at which the unit builds. |
+| cTraits | Set this bitfield 3rd bit (4) to enable military units to build 1 building. |
+| cTraitPiece | Building id to build. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
-| 2 | Work range | Build range. |
-| 4 | Search wait time | Unknown. |
-| 13 | Proceeding graphic | Graphic used while the unit is building. |
-| 14 | Working graphic | Graphic of the unit building a secondary building. |
-| 19 | Deposit sound | Sound id of the unit building. |
-| 22 | Auto search | Unknown. |
-| 24 | Building pick | Unknown. |
-| 29 | Object id | For units building 1 building must be the id of the building and match the **[Trait piece (56)](../../attributes/attributes/#56-trait-piece)** field, for villagers this value is -1. |
-| 30 | Object class | For units building 1 building must be the id of the building and match the **[Trait piece (56)](../../attributes/attributes/#56-trait-piece)** field, for villagers this value is -1. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
+| cTaskAttrWorkRange | Build range. |
+| cTaskAttrSearchWaitTime | Unknown. |
+| cTaskAttrProceedingGraphic | Graphic used while the unit is building. |
+| cTaskAttrWorkingGraphic | Graphic of the unit building a secondary building. |
+| cTaskAttrDepositSound | Sound id of the unit building. |
+| cTaskAttrAutoSearch | Unknown. |
+| cTaskAttrBuildingPick | Unknown. |
+| cTaskAttrObjectId | For units building 1 building must be the id of the building and match the **[Trait piece (56)](../../attributes/attributes/#56-trait-piece)** field, for villagers this value is -1. |
+| cTaskAttrObjectClass | For units building 1 building must be the id of the building and match the **[Trait piece (56)](../../attributes/attributes/#56-trait-piece)** field, for villagers this value is -1. |
 
 <h3>XS example</h3>
 
@@ -293,31 +293,31 @@ xsModifyObjectTasks(obuch, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 59 | Maximum Charge | Amount of value to regenerate to regain conversion ability, usually set to 1. |
-| 60 | Recharge rate | Amount of charge regenerated per second. |
-| 61 | Charge event | Conversion range for non-monks. |
-| 62 | Charge type | Set to -4 to enable conversion for non-monks. |
-| 121 | Button icon id | Icon for the conversion button. |
-| 122 | Short tooltip id | String ID for the conversion button's short tooltip. |
-| 123 | Extended tooltip id | String ID for the conversion button's extended tooltip. |
-| 162 | Charge target | Conversion percent chance. For example, for 50% set to 50. Not changeable with triggers yet, use task attributes instead. |
+| XS constant | Description |
+| :-- | :-- |
+| cMaxCharge | Amount of value to regenerate to regain conversion ability, usually set to 1. |
+| cRechargeRate | Amount of charge regenerated per second. |
+| cChargeEvent | Conversion range for non-monks. |
+| cChargeType | Set to -4 to enable conversion for non-monks. |
+| cButtonIconId | Icon for the conversion button. |
+| cShortTooltipId | String ID for the conversion button's short tooltip. |
+| cExtendedTooltipId | String ID for the conversion button's extended tooltip. |
+| cChargeTarget | Conversion percent chance. For example, for 50% set to 50. Not changeable with triggers yet, use task attributes instead. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Minimum conversion time in seconds. |
-| 1 | Work value 2 | Maximum conversion time in seconds. |
-| 2 | Work range | Conversion range, if positive takes precedence over object attribute. |
-| 4 | Search wait time | Unknown, for monks it's set to 3091, for buildings 3049, for siege 3093 and for units to 0. Probably somehow related to these abilities being unlocked by research. Maybe unused. |
-| 5 | Combat level flag | Unknown. |
-| 9 | Productivity resource | If set associated resource value is a modifier to conversion chance. |
-| 11 | Unused resource | If set enable conversion and apply to the conversion range if the associated resource value is greater than 0. |
-| 26 | Enable targeting | Unknown. |
-| 29 | Object id | Target object or object class to be an eligible target for conversion. |
-| 30 | Object class | Target object or object class to be an eligible target for conversion. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Minimum conversion time in seconds. |
+| cTaskAttrWorkValue2 | Maximum conversion time in seconds. |
+| cTaskAttrWorkRange | Conversion range, if positive takes precedence over object attribute. |
+| cTaskAttrSearchWaitTime | Unknown, for monks it's set to 3091, for buildings 3049, for siege 3093 and for units to 0. Probably somehow related to these abilities being unlocked by research. Maybe unused. |
+| cTaskAttrCombatLevelFlag | Unknown. |
+| cTaskAttrProductivityResource | If set associated resource value is a modifier to conversion chance. |
+| cTaskAttrUnusedResource | If set enable conversion and apply to the conversion range if the associated resource value is greater than 0. |
+| cTaskAttrEnableTargeting | Unknown. |
+| cTaskAttrObjectId | Target object or object class to be an eligible target for conversion. |
+| cTaskAttrObjectClass | Target object or object class to be an eligible target for conversion. |
 
 ## 105. Heal
 
@@ -327,16 +327,16 @@ xsModifyObjectTasks(obuch, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 13 | Work rate | Rate at which the unit heals. |
+| XS constant | Description |
+| :-- | :-- |
+| cWorkRate | Rate at which the unit heals. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
-| 13 | Proceeding graphic | Graphic used while the unit is healing. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
+| cTaskAttrProceedingGraphic | Graphic used while the unit is healing. |
 
 <h3>XS example</h3>
 
@@ -364,23 +364,23 @@ xsTask(teutonicKnight, cTaskTypeHeal, -1, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 13 | Work rate | Rate at which the unit repairs. |
+| XS constant | Description |
+| :-- | :-- |
+| cWorkRate | Rate at which the unit repairs. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
-| 4 | Search wait time | Unknown. |
-| 13 | Proceeding graphic | Graphic used while the unit is repairing. |
-| 14 | Working graphic | Graphic of a unit repairing, seems to be not needed. |
-| 19 | Deposit sound | Sound id of the unit repairing. |
-| 22 | Auto search | Unknown. |
-| 24 | Building pick | Unknown. |
-| 29 | Object id | If -1 repairs everything that is repairable, if set repairs that specific object or objects of a class. |
-| 30 | Object class | If -1 repairs everything that is repairable, if set repairs that specific object or objects of a class. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
+| cTaskAttrSearchWaitTime | Unknown. |
+| cTaskAttrProceedingGraphic | Graphic used while the unit is repairing. |
+| cTaskAttrWorkingGraphic | Graphic of a unit repairing, seems to be not needed. |
+| cTaskAttrDepositSound | Sound id of the unit repairing. |
+| cTaskAttrAutoSearch | Unknown. |
+| cTaskAttrBuildingPick | Unknown. |
+| cTaskAttrObjectId | If -1 repairs everything that is repairable, if set repairs that specific object or objects of a class. |
+| cTaskAttrObjectClass | If -1 repairs everything that is repairable, if set repairs that specific object or objects of a class. |
 
 <h3>XS example</h3>
 
@@ -408,11 +408,11 @@ xsTask(obuch, cTaskTypeRepair, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 4 | Search wait time | String ID of a text to display when the unit is converted. |
-| 29 | Object id | Always -1. |
-| 30 | Object class | Always -1. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrSearchWaitTime | String ID of a text to display when the unit is converted. |
+| cTaskAttrObjectId | Always -1. |
+| cTaskAttrObjectClass | Always -1. |
 
 ## 108. Discovery artifact
 
@@ -428,30 +428,30 @@ xsTask(obuch, cTaskTypeRepair, -1, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 13 | Work rate | Rate at which the unit gathers resources. |
-| Unavailable | Drop sites | Object at which gathered resources are deposited. |
+| XS constant | Description |
+| :-- | :-- |
+| cWorkRate | Rate at which the unit gathers resources. |
+| **Unavailable** — Drop sites | Object at which gathered resources are deposited. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
-| 2 | Work range | Gather range. |
-| 4 | Search wait time | Unknown. |
-| 5 | Combat level flag | Unknown. |
-| 6 | Owner type | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
-| 8 | Resource in | Resource to take from the hunted animal. |
-| 10 | Resource out | Associated resource to deposit gathered resource into. |
-| 11 | Unused resource | If the associated resource value is 1, the hunted corpse does not decay. |
-| 13 | Proceeding graphic | ID of the graphic used while the unit is attacking. |
-| 14 | Working graphic | ID of the graphic used while the unit is gathering. |
-| 15 | Carrying graphic | ID of the graphic used while the unit is carrying resources. |
-| 22 | Auto search | If set to 1 unit searches for nearby objects to continuously gather from. |
-| 23 | Carry check | If set to 1 check if target object has resource before gathering, if set to 0 use Target Diplomacy (6) instead. |
-| 29 | Object id | The object to gather from. |
-| 30 | Object class | The object to gather from. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
+| cTaskAttrWorkRange | Gather range. |
+| cTaskAttrSearchWaitTime | Unknown. |
+| cTaskAttrCombatLevelFlag | Unknown. |
+| cTaskAttrOwnerType | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
+| cTaskAttrResourceIn | Resource to take from the hunted animal. |
+| cTaskAttrResourceOut | Associated resource to deposit gathered resource into. |
+| cTaskAttrUnusedResource | If the associated resource value is 1, the hunted corpse does not decay. |
+| cTaskAttrProceedingGraphic | ID of the graphic used while the unit is attacking. |
+| cTaskAttrWorkingGraphic | ID of the graphic used while the unit is gathering. |
+| cTaskAttrCarryingGraphic | ID of the graphic used while the unit is carrying resources. |
+| cTaskAttrAutoSearch | If set to 1 unit searches for nearby objects to continuously gather from. |
+| cTaskAttrCarryCheck | If set to 1 check if target object has resource before gathering, if set to 0 use Target Diplomacy (6) instead. |
+| cTaskAttrObjectId | The object to gather from. |
+| cTaskAttrObjectClass | The object to gather from. |
 
 ## 111. Trade
 
@@ -461,22 +461,22 @@ xsTask(obuch, cTaskTypeRepair, -1, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 13 | Work rate | Rate at which the unit trades resources. |
-| Unavailable | Drop sites | Object to which trade resources are returned. |
+| XS constant | Description |
+| :-- | :-- |
+| cWorkRate | Rate at which the unit trades resources. |
+| **Unavailable** — Drop sites | Object to which trade resources are returned. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
-| 8 | Resource in | Unknown. |
-| 9 | Productivity resource | Productivity for secondary trade resource. |
-| 10 | Resource out | Secondary resource to trade for other than gold when is enabled. |
-| 15 | Carrying graphic | ID of the graphic used while the unit is carrying trade resources. |
-| 29 | Object id | Building to trade with. |
-| 30 | Object class | Building to trade with. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Multiplier for **[Work rate (13)](../../attributes/attributes/#13-work-rate)**. |
+| cTaskAttrResourceIn | Unknown. |
+| cTaskAttrProductivityResource | Productivity for secondary trade resource. |
+| cTaskAttrResourceOut | Secondary resource to trade for other than gold when is enabled. |
+| cTaskAttrCarryingGraphic | ID of the graphic used while the unit is carrying trade resources. |
+| cTaskAttrObjectId | Building to trade with. |
+| cTaskAttrObjectClass | Building to trade with. |
 
 ## 120. Generate wonder victory
 
@@ -492,10 +492,10 @@ xsTask(obuch, cTaskTypeRepair, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Unknown. |
-| 8 | Resource in | Unknown; resource being collected. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Unknown. |
+| cTaskAttrResourceIn | Unknown; resource being collected. |
 
 ## 122. Loot gather
 
@@ -523,16 +523,16 @@ xsTask(obuch, cTaskTypeRepair, -1, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| Unavailable | Transform unit | Unit id to transform to. |
+| XS constant | Description |
+| :-- | :-- |
+| **Unavailable** — Transform unit | Unit id to transform to. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 5 | Combat level flag | Unknown. |
-| 26 | Enable targeting | Unknown. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrCombatLevelFlag | Unknown. |
+| cTaskAttrEnableTargeting | Unknown. |
 
 ## 131. Off map trade
 
@@ -548,11 +548,11 @@ xsTask(obuch, cTaskTypeRepair, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Unit id to change into when picking up an object. |
-| 29 | Object id | Object id to pick up. Seems to ignore this value and only works on relics. |
-| 30 | Object class | Object id to pick up. Seems to ignore this value and only works on relics. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Unit id to change into when picking up an object. |
+| cTaskAttrObjectId | Object id to pick up. Seems to ignore this value and only works on relics. |
+| cTaskAttrObjectClass | Object id to pick up. Seems to ignore this value and only works on relics. |
 
 <h3>XS example</h3>
 
@@ -579,22 +579,22 @@ xsModifyObjectTasks(mangudai, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 59 | Maximum Charge | Value added to the attack while charging. Must be at least 1 for the charge to work. |
-| 60 | Recharge rate | Amount of charge regenerated per second. The charge can be used again when it reaches **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)**. |
-| 61 | Charge event | Must be 0 or 1 for the task to work. |
-| 62 | Charge type | Must be 1 for the task to work. |
-| 81 | Special ability | Must be 3 for the task to work. |
+| XS constant | Description |
+| :-- | :-- |
+| cMaxCharge | Value added to the attack while charging. Must be at least 1 for the charge to work. |
+| cRechargeRate | Amount of charge regenerated per second. The charge can be used again when it reaches **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)**. |
+| cChargeEvent | Must be 0 or 1 for the task to work. |
+| cChargeType | Must be 1 for the task to work. |
+| cSpecialAbility | Must be 3 for the task to work. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Minimum distance from the target for the speed up to start. |
-| 1 | Work value 2 | Maximum distance from the target for the speed to start. |
-| 2 | Work range | Multiplier on the unit speed while charging. |
-| 3 | Work flag 2 | Must be 2001 for the task to work. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Minimum distance from the target for the speed up to start. |
+| cTaskAttrWorkValue2 | Maximum distance from the target for the speed to start. |
+| cTaskAttrWorkRange | Multiplier on the unit speed while charging. |
+| cTaskAttrWorkFlag2 | Must be 2001 for the task to work. |
 
 <h3>XS example</h3>
 
@@ -643,18 +643,18 @@ xsTask(knight, cTaskTypeChargeAttack, -1, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 2 | Garrison capacity | Unit must have some capacity to hold a kidnapped unit. |
-| Unavailable | Task swap group | Will swap the kidnapper into a different unit that also has the same value in this attribute after the kidnapping. |
+| XS constant | Description |
+| :-- | :-- |
+| cGarrisonCapacity | Unit must have some capacity to hold a kidnapped unit. |
+| **Unavailable** — Task swap group | Will swap the kidnapper into a different unit that also has the same value in this attribute after the kidnapping. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 6 | Owner type | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
-| 29 | Object id | Unit id or class id that can be kidnapped. |
-| 30 | Object class | Unit id or class id that can be kidnapped. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrOwnerType | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
+| cTaskAttrObjectId | Unit id or class id that can be kidnapped. |
+| cTaskAttrObjectClass | Unit id or class id that can be kidnapped. |
 
 <h3>XS example</h3>
 
@@ -688,11 +688,11 @@ xsModifyObjectTasks(scout, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Unit id to change into when depositing an object. |
-| 29 | Object id | Building id to deposit the picked up object to, does not seem to work with custom units. |
-| 30 | Object class | Building id to deposit the picked up object to, does not seem to work with custom units. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Unit id to change into when depositing an object. |
+| cTaskAttrObjectId | Building id to deposit the picked up object to, does not seem to work with custom units. |
+| cTaskAttrObjectClass | Building id to deposit the picked up object to, does not seem to work with custom units. |
 
 ## 149. Shear
 
@@ -708,14 +708,14 @@ xsModifyObjectTasks(scout, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Amount of resources received. |
-| 5 | Combat level flag | For units, set to 2 to generate resources passively. Buildings always generate resources passively. |
-| 9 | Productivity resource | The value of this resource is used as a multiplier of the amount received. Must be set to some resource containing a positive value for the task to work. |
-| 10 | Resource out | Resource type to receive. |
-| 29 | Object id | Object which if attacked by a unit will generate resource. |
-| 30 | Object class | Object which if attacked by a unit will generate resource. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Amount of resources received. |
+| cTaskAttrCombatLevelFlag | For units, set to 2 to generate resources passively. Buildings always generate resources passively. |
+| cTaskAttrProductivityResource | The value of this resource is used as a multiplier of the amount received. Must be set to some resource containing a positive value for the task to work. |
+| cTaskAttrResourceOut | Resource type to receive. |
+| cTaskAttrObjectId | Object which if attacked by a unit will generate resource. |
+| cTaskAttrObjectClass | Object which if attacked by a unit will generate resource. |
 
 <h3>XS example</h3>
 
@@ -757,11 +757,11 @@ xsModifyObjectTasks(attila, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Amount of damage to deal per tick. If negative will increase the current HP instead. Will go over max HP. |
-| 1 | Work value 2 | How often the unit damages surrounding units in fraction of seconds. |
-| 2 | Work range | Range of this damage surrounding the current unit. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Amount of damage to deal per tick. If negative will increase the current HP instead. Will go over max HP. |
+| cTaskAttrWorkValue2 | How often the unit damages surrounding units in fraction of seconds. |
+| cTaskAttrWorkRange | Range of this damage surrounding the current unit. |
 
 <h3>XS example</h3>
 
@@ -791,12 +791,12 @@ xsTask(elephant, cTaskTypeMovementDamage, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 4 | Search wait time | Unknown. |
-| 23 | Carry check | Unknown. |
-| 29 | Object id | Resources containing object for which this unit exists as a dropsite. |
-| 30 | Object class | Resources containing object for which this unit exists as a dropsite. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrSearchWaitTime | Unknown. |
+| cTaskAttrCarryCheck | Unknown. |
+| cTaskAttrObjectId | Resources containing object for which this unit exists as a dropsite. |
+| cTaskAttrObjectClass | Resources containing object for which this unit exists as a dropsite. |
 
 ## 154. Loot
 
@@ -806,22 +806,22 @@ xsTask(elephant, cTaskTypeMovementDamage, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Amount of resources received. |
-| 2 | Work range | If set to 0 applies to all units. If set to >0 then it applies to only units whose player matches this value. |
-| 3 | Work flag 2 | If set, maximum number of times this unit can trigger the task. |
-| 4 | Search wait time | ID of the object attribute modified by this task. Attributes known to be supported include: **[Hit points (0)](../../attributes/attributes/#0-hit-points),** **[Attack (9)](../../attributes/attributes/#9-attack)**. |
-| 5 | Combat level flag | If set to 1, unit will gain attributes. |
-| 8 | Resource in | If set the tech of the associated resources value id will be researched. |
-| 9 | Productivity resource | If positive, the associated resource value must be greater than 0 for this task to activate. The positive value multiplies the resources gained. If negative, its absolute value is treated as a technology ID, and that technology must be researched for this task to activate. |
-| 10 | Resource out | Resource type to receive. |
-| 11 | Unused resource | If set the tech of the associated resources value id will be researched. |
-| 13 | Proceeding graphic | Graphic that plays when the unit gains an attribute via the task. |
-| 23 | Carry check | If set, all Tasks 154 with the same Carry Check ID will count towards the same cap. |
-| 25 | Gather type | If unit gains attributes this attribute stores the amount of attribute the unit gains. |
-| 29 | Object id | Object which if killed by this unit will trigger resource/attribute gain. If -1 affects all units. Has to be an object that can increase the kill/razing/conversions stats. |
-| 30 | Object class | Object which if killed by this unit will trigger resource/attribute gain. If -1 affects all units. Has to be an object that can increase the kill/razing/conversions stats. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Amount of resources received. |
+| cTaskAttrWorkRange | If set to 0 applies to all units. If set to >0 then it applies to only units whose player matches this value. |
+| cTaskAttrWorkFlag2 | If set, maximum number of times this unit can trigger the task. |
+| cTaskAttrSearchWaitTime | ID of the object attribute modified by this task. Attributes known to be supported include: **[Hit points (0)](../../attributes/attributes/#0-hit-points),** **[Attack (9)](../../attributes/attributes/#9-attack)**. |
+| cTaskAttrCombatLevelFlag | If set to 1, unit will gain attributes. |
+| cTaskAttrResourceIn | If set the tech of the associated resources value id will be researched. |
+| cTaskAttrProductivityResource | If positive, the associated resource value must be greater than 0 for this task to activate. The positive value multiplies the resources gained. If negative, its absolute value is treated as a technology ID, and that technology must be researched for this task to activate. |
+| cTaskAttrResourceOut | Resource type to receive. |
+| cTaskAttrUnusedResource | If set the tech of the associated resources value id will be researched. |
+| cTaskAttrProceedingGraphic | Graphic that plays when the unit gains an attribute via the task. |
+| cTaskAttrCarryCheck | If set, all Tasks 154 with the same Carry Check ID will count towards the same cap. |
+| cTaskAttrGatherType | If unit gains attributes this attribute stores the amount of attribute the unit gains. |
+| cTaskAttrObjectId | Object which if killed by this unit will trigger resource/attribute gain. If -1 affects all units. Has to be an object that can increase the kill/razing/conversions stats. |
+| cTaskAttrObjectClass | Object which if killed by this unit will trigger resource/attribute gain. If -1 affects all units. Has to be an object that can increase the kill/razing/conversions stats. |
 
 <h3>XS example 1</h3>
 
@@ -886,33 +886,33 @@ xsModifyObjectTasks(mangudai, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 60 | Recharge rate | Amount of charge regenerated per second. Together with **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)**, this controls the temporary aura's cooldown. The cooldown ends when the charge reaches **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)**. For a 60-second cooldown, set **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)** to 1 and **[Recharge rate (60)](../../attributes/attributes/#60-recharge-rate)** to 0.01666667 (1.0 / 60.0). |
-| 61 | Charge event | For temporary auras stores aura duration when activated. |
-| 62 | Charge type | Set to -3 to enable temporary auras. |
-| 63 | Combat ability | Attribute bitfield 6th bit (32) needs to be set for the aura to activate. If 7th bit is set (64) the aura will affect the unit itself instead of the units in range (aura prerequisites still need to be met on other units). |
-| 121 | Button icon id | Icon for the temporary aura button. |
-| 122 | Short tooltip id | String ID for the temporary aura button's short tooltip. |
-| 123 | Extended tooltip id | String ID for the temporary aura button's extended tooltip. |
+| XS constant | Description |
+| :-- | :-- |
+| cRechargeRate | Amount of charge regenerated per second. Together with **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)**, this controls the temporary aura's cooldown. The cooldown ends when the charge reaches **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)**. For a 60-second cooldown, set **[Maximum Charge (59)](../../attributes/attributes/#59-maximum-charge)** to 1 and **[Recharge rate (60)](../../attributes/attributes/#60-recharge-rate)** to 0.01666667 (1.0 / 60.0). |
+| cChargeEvent | For temporary auras stores aura duration when activated. |
+| cChargeType | Set to -3 to enable temporary auras. |
+| cCombatAbility | Attribute bitfield 6th bit (32) needs to be set for the aura to activate. If 7th bit is set (64) the aura will affect the unit itself instead of the units in range (aura prerequisites still need to be met on other units). |
+| cButtonIconId | Icon for the temporary aura button. |
+| cShortTooltipId | String ID for the temporary aura button's short tooltip. |
+| cExtendedTooltipId | String ID for the temporary aura button's extended tooltip. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Aura attribute value to add or multiply. |
-| 1 | Work value 2 | Minimum amount of units to be in range for the aura to activate. |
-| 2 | Work range | Aura range. If aura targets enemies the targeted enemy units must be in range of aura units sight range. |
-| 4 | Search wait time | ID of the object attribute modified by this task. Attributes known to be supported include: [Hit points (0)](../../attributes/attributes/#0-hit-points), [Line of sight (1)](../../attributes/attributes/#1-line-of-sight), [Movement speed (5)](../../attributes/attributes/#5-movement-speed), [Attack (9)](../../attributes/attributes/#9-attack), [Attack reload time (10)](../../attributes/attributes/#10-attack-reload-time), [Maximum Range (12)](../../attributes/attributes/#12-maximum-range) (visual only), [Work rate (13)](../../attributes/attributes/#13-work-rate), [Regeneration rate (109)](../../attributes/attributes/#109-regeneration-rate), [Conversion chance modifier (113)](../../attributes/attributes/#113-conversion-chance-modifier), Melee armor (116), Pierce armor (117), [Regeneration HP percent (120)](../../attributes/attributes/#120-regeneration-hp-percent). |
-| 5 | Combat level flag | Bit field of aura settings: **multiply (1)** multiplies attribute value instead of adds it, **circular (2)** makes aura range circular instead of square, **visible (4)** shows range indicator (is affected by ui settings), **temporary (8)** makes aura effect temporary, **activated (16)** the temporary effect is only applied on the moment of aura activation, and remains if target units leave the aura, **translucent (32)** make aura indicator translucent, unsure how it works as its overwritten by ui settings. |
-| 6 | Owner type | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
-| 13 | Proceeding graphic | Graphic displayed over the units receiving the aura. |
-| 16 | Gathering sound | Short Tooltip for UI indicator. |
-| 19 | Deposit sound | Long Tooltip for UI indicator. |
-| 25 | Gather type | UI indicator icon displayed (per icons.json). |
-| 27 | Enabled | If set, the associated resource value needs to be set to >0 for the aura to activate. |
-| 29 | Object id | Object targeted by the aura. |
-| 30 | Object class | Object targeted by the aura. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Aura attribute value to add or multiply. |
+| cTaskAttrWorkValue2 | Minimum amount of units to be in range for the aura to activate. |
+| cTaskAttrWorkRange | Aura range. If aura targets enemies the targeted enemy units must be in range of aura units sight range. |
+| cTaskAttrSearchWaitTime | ID of the object attribute modified by this task. Attributes known to be supported include: [Hit points (0)](../../attributes/attributes/#0-hit-points), [Line of sight (1)](../../attributes/attributes/#1-line-of-sight), [Movement speed (5)](../../attributes/attributes/#5-movement-speed), [Attack (9)](../../attributes/attributes/#9-attack), [Attack reload time (10)](../../attributes/attributes/#10-attack-reload-time), [Maximum Range (12)](../../attributes/attributes/#12-maximum-range) (visual only), [Work rate (13)](../../attributes/attributes/#13-work-rate), [Regeneration rate (109)](../../attributes/attributes/#109-regeneration-rate), [Conversion chance modifier (113)](../../attributes/attributes/#113-conversion-chance-modifier), Melee armor (116), Pierce armor (117), [Regeneration HP percent (120)](../../attributes/attributes/#120-regeneration-hp-percent). |
+| cTaskAttrCombatLevelFlag | Bit field of aura settings: **multiply (1)** multiplies attribute value instead of adds it, **circular (2)** makes aura range circular instead of square, **visible (4)** shows range indicator (is affected by ui settings), **temporary (8)** makes aura effect temporary, **activated (16)** the temporary effect is only applied on the moment of aura activation, and remains if target units leave the aura, **translucent (32)** make aura indicator translucent, unsure how it works as its overwritten by ui settings. |
+| cTaskAttrOwnerType | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
+| cTaskAttrProceedingGraphic | Graphic displayed over the units receiving the aura. |
+| cTaskAttrGatheringSound | Short Tooltip for UI indicator. |
+| cTaskAttrDepositSound | Long Tooltip for UI indicator. |
+| cTaskAttrGatherType | UI indicator icon displayed (per icons.json). |
+| cTaskAttrEnabled | If set, the associated resource value needs to be set to >0 for the aura to activate. |
+| cTaskAttrObjectId | Object targeted by the aura. |
+| cTaskAttrObjectClass | Object targeted by the aura. |
 
 <h3>XS example 1</h3>
 
@@ -1014,12 +1014,12 @@ xsModifyObjectTasks(joanOfArc, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Id of an additional unit to spawn. |
-| 1 | Work value 2 | Number of units to spawn. |
-| 8 | Resource in | If set, the value of the corresponding resource needs to be >0 for the Task to trigger. |
-| 9 | Productivity resource | If set, the associated resource value is added to the number of units to spawn. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Id of an additional unit to spawn. |
+| cTaskAttrWorkValue2 | Number of units to spawn. |
+| cTaskAttrResourceIn | If set, the value of the corresponding resource needs to be >0 for the Task to trigger. |
+| cTaskAttrProductivityResource | If set, the associated resource value is added to the number of units to spawn. |
 
 <h3>XS example</h3>
 
@@ -1047,23 +1047,23 @@ xsTask(huskarl, cTaskTypeExtraSpawn, -1, player);
 
 <h3>Object attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 63 | Combat ability | Attribute bitfield 8th bit (128) needs to be set for stingers to activate. |
+| XS constant | Description |
+| :-- | :-- |
+| cCombatAbility | Attribute bitfield 8th bit (128) needs to be set for stingers to activate. |
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Stingers attribute value to add or multiply. |
-| 1 | Work value 2 | Effect duration in seconds, if negative it's permanent. |
-| 2 | Work range | If 0 apply to the attacker, if 1 apply to the target of the attack (including splash damage targets). |
-| 4 | Search wait time | ID of the object attribute modified by this task. Attributes known to be supported include: **[Hit points (0)](../../attributes/attributes/#0-hit-points), [Movement speed (5)](../../attributes/attributes/#5-movement-speed), [Attack (9)](../../attributes/attributes/#9-attack), [Attack reload time (10)](../../attributes/attributes/#10-attack-reload-time), [Regeneration rate (109)](../../attributes/attributes/#109-regeneration-rate), Melee armor (116), Pierce armor (117), [Regeneration HP percent (120)](../../attributes/attributes/#120-regeneration-hp-percent)**. |
-| 5 | Combat level flag | Bit field of stingers settings: **Multiply (1)** multiplies attribute value instead of adds it, **Not stack (2)** does not allow other stinger tasks that modify same attribute to stack. |
-| 6 | Owner type | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
-| 9 | Productivity resource | If positive, the associated resource value must be greater than 0 for this task to activate. |
-| 29 | Object id | Object targeted by the stinger. |
-| 30 | Object class | Object targeted by the stinger. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Stingers attribute value to add or multiply. |
+| cTaskAttrWorkValue2 | Effect duration in seconds, if negative it's permanent. |
+| cTaskAttrWorkRange | If 0 apply to the attacker, if 1 apply to the target of the attack (including splash damage targets). |
+| cTaskAttrSearchWaitTime | ID of the object attribute modified by this task. Attributes known to be supported include: **[Hit points (0)](../../attributes/attributes/#0-hit-points), [Movement speed (5)](../../attributes/attributes/#5-movement-speed), [Attack (9)](../../attributes/attributes/#9-attack), [Attack reload time (10)](../../attributes/attributes/#10-attack-reload-time), [Regeneration rate (109)](../../attributes/attributes/#109-regeneration-rate), Melee armor (116), Pierce armor (117), [Regeneration HP percent (120)](../../attributes/attributes/#120-regeneration-hp-percent)**. |
+| cTaskAttrCombatLevelFlag | Bit field of stingers settings: **Multiply (1)** multiplies attribute value instead of adds it, **Not stack (2)** does not allow other stinger tasks that modify same attribute to stack. |
+| cTaskAttrOwnerType | Controls which objects the task can target based on ownership. Values: **0** — All objects; **1** — Your objects only; **2** — Neutral and enemy objects only; **3** — Gaia only; **4** — Gaia, your and ally objects only; **5** — Gaia, neutral and enemy objects only; **6** — All but your objects. |
+| cTaskAttrProductivityResource | If positive, the associated resource value must be greater than 0 for this task to activate. |
+| cTaskAttrObjectId | Object targeted by the stinger. |
+| cTaskAttrObjectClass | Object targeted by the stinger. |
 
 <h3>XS example</h3>
 
@@ -1111,16 +1111,16 @@ xsModifyObjectTasks(joanOfArc, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | ID of the unit to transform to. |
-| 1 | Work value 2 | HP to trigger the transformation. If >0 transforms when the unit's current HP is higher than the value. If <0 transforms when the unit's current HP is lower than the value made positive (currHp < (workVal * -1)). |
-| 5 | Combat level flag | Bit field of HP transformation settings: **Multiply (1)** will use the Work value 2 (1) as a multiplier of current HP instead of exact value. |
-| 9 | Productivity resource | If positive, the associated resource value must be greater than 0 for this task to activate. If negative, its absolute value is treated as a technology ID, and that technology must be researched for this task to activate. |
-| 10 | Resource out | If set, will add its associated resource value to the Work value 2 (1). |
-| 13 | Proceeding graphic | Graphic that plays when units transform. |
-| 29 | Object id | Always -1. |
-| 30 | Object class | Always -1. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | ID of the unit to transform to. |
+| cTaskAttrWorkValue2 | HP to trigger the transformation. If >0 transforms when the unit's current HP is higher than the value. If <0 transforms when the unit's current HP is lower than the value made positive (currHp < (workVal * -1)). |
+| cTaskAttrCombatLevelFlag | Bit field of HP transformation settings: **Multiply (1)** will use the Work value 2 (1) as a multiplier of current HP instead of exact value. |
+| cTaskAttrProductivityResource | If positive, the associated resource value must be greater than 0 for this task to activate. If negative, its absolute value is treated as a technology ID, and that technology must be researched for this task to activate. |
+| cTaskAttrResourceOut | If set, will add its associated resource value to the Work value 2 (1). |
+| cTaskAttrProceedingGraphic | Graphic that plays when units transform. |
+| cTaskAttrObjectId | Always -1. |
+| cTaskAttrObjectClass | Always -1. |
 
 <h3>XS example</h3>
 
@@ -1158,17 +1158,17 @@ xsTask(berserk, cTaskTypeHPTransform, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Movement Speed multiplier. |
-| 1 | Work value 2 | Attack Speed multiplier. |
-| 7 | Terrain | Terrain (or Terrain Type) on which the unit will use the task. If >= 0: Terrain ID. If <0: Terrain Type (can combine multiple bits). |
-| 12 | Moving graphic | Walking Graphic. |
-| 13 | Proceeding graphic | Attack Graphic. |
-| 14 | Working graphic | Running Graphic. |
-| 15 | Carrying graphic | Idle Graphic. |
-| 16 | Gathering sound | Dying Graphic. |
-| 19 | Deposit sound | Undead Graphic. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Movement Speed multiplier. |
+| cTaskAttrWorkValue2 | Attack Speed multiplier. |
+| cTaskAttrTerrain | Terrain (or Terrain Type) on which the unit will use the task. If >= 0: Terrain ID. If <0: Terrain Type (can combine multiple bits). |
+| cTaskAttrMovingGraphic | Walking Graphic. |
+| cTaskAttrProceedingGraphic | Attack Graphic. |
+| cTaskAttrWorkingGraphic | Running Graphic. |
+| cTaskAttrCarryingGraphic | Idle Graphic. |
+| cTaskAttrGatheringSound | Dying Graphic. |
+| cTaskAttrDepositSound | Undead Graphic. |
 
 ## 160. HP damage modifier
 
@@ -1178,12 +1178,12 @@ xsTask(berserk, cTaskTypeHPTransform, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Value to add. |
-| 1 | Work value 2 | Threshold of HP percentage to apply the modifier. |
-| 2 | Work range | If 0, check the unit's own HP. If > 0, compare the current target's HP. |
-| 4 | Search wait time | ID of the object attribute modified by this task. Attributes known to be supported include: **[Attack (9)](../../attributes/attributes/#9-attack)**. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Value to add. |
+| cTaskAttrWorkValue2 | Threshold of HP percentage to apply the modifier. |
+| cTaskAttrWorkRange | If 0, check the unit's own HP. If > 0, compare the current target's HP. |
+| cTaskAttrSearchWaitTime | ID of the object attribute modified by this task. Attributes known to be supported include: **[Attack (9)](../../attributes/attributes/#9-attack)**. |
 
 <h3>XS example</h3>
 
@@ -1215,13 +1215,13 @@ xsTask(throwingAxeman, cTaskTypeHPModifier, -1, player);
 
 <h3>Task attributes</h3>
 
-| ID | Attribute | Description |
-| --: | :-- | :-- |
-| 0 | Work value 1 | Value to refund. |
-| 2 | Work range | If 0, grant the resources to the player who owned the unit. If > 0, grant to the player who killed the unit. |
-| 5 | Combat level flag | If 0, use Work Value 1 as a flat value to grant. If 1, use Work Value 1 as a fraction of the unit's associated resource cost. |
-| 9 | Productivity resource | If set, multiply Work Value 1 by the value of this resource. |
-| 10 | Resource out | Resource to refund. |
+| XS constant | Description |
+| :-- | :-- |
+| cTaskAttrWorkValue1 | Value to refund. |
+| cTaskAttrWorkRange | If 0, grant the resources to the player who owned the unit. If > 0, grant to the player who killed the unit. |
+| cTaskAttrCombatLevelFlag | If 0, use Work Value 1 as a flat value to grant. If 1, use Work Value 1 as a fraction of the unit's associated resource cost. |
+| cTaskAttrProductivityResource | If set, multiply Work Value 1 by the value of this resource. |
+| cTaskAttrResourceOut | Resource to refund. |
 
 <h3>XS example</h3>
 
