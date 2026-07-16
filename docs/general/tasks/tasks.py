@@ -8,6 +8,7 @@ HERE = Path(__file__).resolve().parent
 DATA_PATH = HERE / "tasks.json"
 OUTPUT_PATH = HERE / "tasks.md"
 ATTRIBUTES_PATH = HERE.parent / "attributes" / "attributes.json"
+CONSTANTS_PATH = HERE.parent / "xs" / "constants" / "constants.json"
 
 OWNER_TYPE_VALUES = [
     (0, "All objects"),
@@ -42,9 +43,25 @@ def link_object_attributes(text: str, object_attributes: dict[str, dict[str, Any
     return text
 
 
+def xs_constant_links(constants: dict[str, list[dict[str, Any]]]) -> dict[str, str]:
+    links = {}
+    for category_index, category_constants in enumerate(constants.values(), 1):
+        for constant_index, constant in enumerate(category_constants, 1):
+            anchor = f"{category_index}{constant_index}-{constant['name'].lower()}"
+            links[constant["name"]] = f"../../xs/constants/constants/#{anchor}"
+    return links
+
+
+def link_xs_constant(constant: str, constant_links: dict[str, str]) -> str:
+    if constant not in constant_links:
+        return constant
+    return f"[{constant}]({constant_links[constant]})"
+
+
 def attributes_table(
     attributes: list[dict[str, Any]],
     object_attribute_docs: dict[str, dict[str, Any]],
+    constant_links: dict[str, str],
 ) -> str:
     lines = [
         "| XS constant | Description |",
@@ -61,7 +78,7 @@ def attributes_table(
 
     for attribute in sorted_attributes:
         if attribute["available"]:
-            constant = attribute["xs_constant"]
+            constant = link_xs_constant(attribute["xs_constant"], constant_links)
         else:
             constant = f"**Unavailable** — {attribute['name']}"
         description = attribute["description"]
@@ -79,6 +96,7 @@ def attributes_table(
 def generate(
     tasks: dict[str, dict[str, Any]],
     object_attribute_docs: dict[str, dict[str, Any]],
+    constant_links: dict[str, str],
 ) -> str:
     lines = [
         "# Tasks",
@@ -100,7 +118,7 @@ def generate(
             [
                 f"## {task_id}. {task['name']}",
                 "",
-                f"- ID: {task_id}",
+                f"- XS constant: {link_xs_constant(task['xs_constant'], constant_links)}",
                 "",
                 f"- {link_object_attributes(task['description'], object_attribute_docs)}",
                 "",
@@ -115,6 +133,7 @@ def generate(
                     attributes_table(
                         task["object_attributes"],
                         object_attribute_docs,
+                        constant_links,
                     ),
                     "",
                 ]
@@ -128,6 +147,7 @@ def generate(
                     attributes_table(
                         task["task_attributes"],
                         object_attribute_docs,
+                        constant_links,
                     ),
                     "",
                 ]
@@ -148,7 +168,13 @@ def main() -> None:
     with ATTRIBUTES_PATH.open(encoding="utf-8") as file:
         object_attribute_docs = json.load(file)
 
-    OUTPUT_PATH.write_text(generate(tasks, object_attribute_docs), encoding="utf-8")
+    with CONSTANTS_PATH.open(encoding="utf-8") as file:
+        constants = json.load(file)
+
+    OUTPUT_PATH.write_text(
+        generate(tasks, object_attribute_docs, xs_constant_links(constants)),
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":
